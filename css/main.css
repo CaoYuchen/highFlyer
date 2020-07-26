@@ -1,0 +1,143 @@
+@font-face {
+  font-family: EducationVAGRounded-Bold;
+  src: url(EducationVAGRounded-Bold.ttf);
+}
+
+@font-face {
+  font-family: EducationVAGRounded-Black;
+  src: url(EducationVAGRounded-Black.ttf);
+}
+
+
+button {
+    outline: none;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+input {
+    outline: none;
+    overflow: hidden;
+}
+
+iframe {
+    display: block;
+    overflow: hidden;
+}
+
+
+body {
+    color: #4a4a4a;
+    background-image: url(../media/Background/Stander_page_Hello.png);
+    background-repeat:no-repeat ;
+    background-size:100% 100%;
+    background-attachment: fixed;
+}
+
+#topButtonMenu{
+    position: fixed;
+    top:1%;
+    left:50%;
+    right:0;
+    margin-left: -600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1000;
+}
+
+#topSeq{
+	position: absolute;
+	display: inline-block;
+	left:110px;
+	top:22px;
+}
+
+.topButton{
+	margin: 0px 35px;
+}
+
+#leftButtonMenu{
+    top:4.8%;
+    position:fixed;
+    left:0%;
+    z-index: 1000;
+}
+
+#rightButtonMenu{
+    top:4.8%;
+    position:fixed;
+    right:0%;
+    text-align: right;
+    z-index: 1000;
+}
+
+.sideButton{
+	margin: 5px -6px;
+	display: inline-block;
+}
+
+.roster{
+	padding:0px 30px;
+	
+}
+
+.pages{
+	display: none;
+}
+
+.active{
+	display: inline-block !important;
+}
+
+.pageTitle{
+	top:50%;
+	left:50%;
+	right:0;
+	width:1000px;
+	margin-left:-500px;
+	margin-top:-100px;
+	position: fixed;
+	font-family: EducationVAGRounded-Bold;
+	color: #943183;
+	font-size: 100px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.imageTitle{
+	top:50%;
+	left:50%;
+	right:0;
+	width:1200px;
+	margin-left:-600px;
+	position: fixed;
+	text-align: center;
+}
+
+.finaleTitle{
+	bottom:0%;
+	left:50%;
+	right:0;
+	width:1400px;
+	margin-left:-700px;
+	position: fixed;
+	text-align: center;
+}
+
+.videoTitle{
+	top:50%;
+	left:50%;
+	right:0;
+	width:1200px;
+	margin-left:-600px;
+	margin-top:-250px;
+	position: fixed;
+	text-align: center;
+}
+
+.wheelButton{
+	margin: 0px 35px;
+}
