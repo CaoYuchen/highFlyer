@@ -47,15 +47,13 @@ $(function() {
 	var pageNumber = [];
 	for (var i=0; i<8;i++)
 	{
-		pageNumber = $.merge(pageNumber,countPages($('#chapter' + i +' > .pages').length,i));
+		pageNumber = $.merge(pageNumber,countPages($('#chapter' + i +' > .pages').not('.H, .M, .MH').length,i));
 	}
+
 	var vocabularyChapter = 2;
-	var Mnumber = countPages($('.M.pages').length, vocabularyChapter);
-	var MHnumber = countPages($('.MH.pages').length, vocabularyChapter);
-	var Hnumber = countPages($('.H.pages').length, vocabularyChapter);
-	var Mindex = 1,
-		MHindex = 1,
-		Hindex = 1;
+	var Mnumber = countPagesMH($('.M.pages').length, vocabularyChapter,'M');
+	var MHnumber = countPagesMH($('.MH.pages').length, vocabularyChapter,'MH');
+	var Hnumber = countPagesMH($('.H.pages').length, vocabularyChapter,'H');
 	
 	// SideButton
 	var number = pageNumber.length;
@@ -66,33 +64,12 @@ $(function() {
 		position = [p1,p2];
 		index = getIndexOf(pageNumber,position);
 
-		console.log(type)
-
 		// update index
-		if(index == 2)
-		{
-			if(type.includes("M"))
-			{
-				Mindex = updateIndex(type,Mnumber,Mindex);
-			}
-			else if(type.includes("MH"))
-			{
-				MHindex = updateIndex(type,MHnumber,MHindex);
-			}
-			else if(type.includes("H"))
-			{
-				Hindex = updateIndex(type,Hnumber,Hindex);
-			}
-		}
-		else
-		{
-			index = updateIndex(type,pageNumber,index);
-		}
-
-		console.log(index);
+		index = updateIndex(type,pageNumber,index);
 
 		// change background
-		$('.next, .topButton, .roster, .previous').css("visibility", "visible");;
+		$('.next, .topButton, .roster, .previous').css("visibility", "visible");
+		$('.Hbutton, .Mbutton').hide();
 		if(pageNumber[index][1]>1)
 		{
 			$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
@@ -104,6 +81,16 @@ $(function() {
 			else if(pageNumber[index] == pageNumber[pageNumber.length-2])
 			{
 				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[5] +'")');
+			}
+
+			// Hbutton and Mbutton
+			if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "MHselection")
+			{
+				$('.Mbutton, .Hbutton').show();
+			}
+			else if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "Hselection")
+			{
+				$('.Hbutton').show();
 			}
 		}
 		else if(index == 1)
@@ -122,25 +109,7 @@ $(function() {
 
 		// toggle content
 		$('.pages').removeClass("active");
-		if(index != 2)
-		{
-			$('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").addClass("active");
-		}
-		else
-		{
-			if(type.includes("M"))
-			{
-				$('#chapter'+vocabularyChapter).find("[data-M=page"+Mnumber[Mindex]+"]").addClass("active");
-			}
-			else if(type.includes("MH"))
-			{
-				$('#chapter'+vocabularyChapter).find("[data-MH=page"+MHnumber[MHindex]+"]").addClass("active");
-			}
-			else if(type.includes("H"))
-			{
-				$('#chapter'+vocabularyChapter).find("[data-H=page"+Hnumber[Hindex]+"]").addClass("active");
-			}
-		}
+		$('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").addClass("active");
 
 		// change button icon
 		curButton = "topButton"+pageNumber[index][0];
@@ -158,18 +127,62 @@ $(function() {
 
 	})
 
-	$('.M').click(function(e){
+	$('.Hbutton, .Mbutton').click(function(e){
+		curPage = $('.active.pages').attr('id');
+		console.log(curPage);
+		if($(this).attr('class').includes('Hbutton'))
+		{
+			if (curPage == "Hselection")
+			{
+				newNumber = MHnumber;
+			}
+			else if(curPage == "MHselection")
+			{
+				newNumber = Hnumber;
+			}
+		}
+		else
+		{
+			newNumber = Mnumber;
+		}
+
+		// update page index
+		indexStart = getIndexOf(pageNumber,[vocabularyChapter,Number($('#'+curPage).attr('data-value').match(/\d+/)[0])]);
+		indexEnd = getIndexOf(pageNumber,[vocabularyChapter+1,1]);
+
+		start = pageNumber.slice(0,indexStart+1);
+		end = pageNumber.slice(indexEnd,pageNumber.length);
+
+		console.log(start)
+		console.log(end)
+		console.log(newNumber)
+		pageNumber=$.merge($.merge(start,newNumber),end);
+
+		console.log(pageNumber);
+
+		indexStart++;
+
 		$('.pages').removeClass("active");
-		$('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").addClass("active");
+		$('#chapter'+pageNumber[indexStart][0]).find("[data-value=page"+pageNumber[indexStart][1]+"]").addClass("active");
 	})
 
 	function countPages (length,n){
-		var pageNumber = [];
+		var number = [];
 		for(var i = 0; i < length; i++)
 		{
-			pageNumber[i] = [n,i+1];
+			number[i] = [n,i+1];
 		}
-		return pageNumber;
+		return number;
+	}
+
+	function countPagesMH (length,n,name){
+		var number = [];
+		for(var i = 0; i < length; i++)
+		{
+			k = Number($('[data-'+name+'=page'+(i+1)+']').attr('data-value').match(/\d+/)[0]);
+			number[i] = [n,k];
+		}
+		return number;
 	}
 
 	function getIndexOf(array, item) {

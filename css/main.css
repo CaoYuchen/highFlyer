@@ -141,3 +141,7 @@ body {
 .wheelButton{
 	margin: 0px 35px;
 }
+
+.Hbutton, .Mbutton{
+	display: none;
+}
