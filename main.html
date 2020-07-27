@@ -37,38 +37,38 @@
 
     <div id="rightButtonMenu">
         <!-- Roster -->
-        <button class='roster sideButton'><img src='./media/buttons/Roster.png' width='42px'></button><br><br>
+        <button class='roster sideButton' style="right:0%"><img src='./media/buttons/Roster.png' width='42px'></button>
         <!-- Next -->
-        <button class="buttonActive sideButton next"><img src="./media/buttons/BackForward/Right_forward.png" width="58px"></button><br>
+        <button class="sideButton next"><img src="./media/buttons/BackForward/Right_forward.png" width="58px"></button>
         <!-- Previous -->
-        <button class="buttonActive sideButton previous"><img src="./media/buttons/BackForward/Right_back.png" width="58px"></button><br>
+        <button class="sideButton previous"><img src="./media/buttons/BackForward/Right_back.png" width="58px"></button>
         <!-- Mbutton -->
-        <button class="buttonActive sideButton Mbutton"><img src="./media/buttons/BackForward/Right_m.png" width="58px"></button><br>
+        <button class="sideButton Mbutton"><img src="./media/buttons/BackForward/Right_m.png" width="58px"></button>
         <!-- Hbutton -->
-        <button class="buttonActive sideButton Hbutton"><img src="./media/buttons/BackForward/Right_h.png" width="58px"></button><br>
+        <button class="sideButton Hbutton"><img src="./media/buttons/BackForward/Right_h.png" width="58px"></button>
     </div>
 
     <div id="leftButtonMenu">
         <!-- Roster -->
-        <button class='roster sideButton'><img src='./media/buttons/Roster.png' width='42px'></button><br><br>
+        <button class='roster sideButton'><img src='./media/buttons/Roster.png' width='42px'></button>
         <!-- Next -->
-        <button class='buttonActive sideButton next'><img src='./media/buttons/BackForward/Left_forward.png' width='58px'></button><br>
+        <button class='sideButton next'><img src='./media/buttons/BackForward/Left_forward.png' width='58px'></button>
         <!-- Previous -->
-        <button class='buttonActive sideButton previous'><img src='./media/buttons/BackForward/Left_back.png' width='58px'></button><br>
+        <button class='sideButton previous'><img src='./media/buttons/BackForward/Left_back.png' width='58px'></button>
         <!-- Mbutton -->
-        <button class="buttonActive sideButton Mbutton"><img src="./media/buttons/BackForward/Left_m.png" width="58px"></button><br>
+        <button class="sideButton Mbutton"><img src="./media/buttons/BackForward/Left_m.png" width="58px"></button>
         <!-- Hbutton -->
-        <button class="buttonActive sideButton Hbutton"><img src="./media/buttons/BackForward/Left_h.png" width="58px"></button><br>
+        <button class="sideButton Hbutton"><img src="./media/buttons/BackForward/Left_h.png" width="58px"></button>
     </div>
 
 
     <div id="mainPage">
         <div id="chapter0">
-            <div class="pages" data-value="page1">
+            <div class="active pages" data-value="page1">
             </div>
         </div>
         <div id="chapter1">
-            <div class="active pages" data-value="page1">
+            <div class="pages" data-value="page1">
             </div>
             <div class="pages" data-value="page2">
                 <div class="imageTitle"><img src='./media/Background/Stander_page_class_rule.png' width='1000px' style="margin-top:-350px"></div>
@@ -79,22 +79,34 @@
                 <div class="pageTitle"><p>Vocabulary</p></div>
             </div>
             <div class="pages" data-value="page2">
+                <div class="foodNumber"><span class="frontNumber">1</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Burger.png' width='700px' style="margin-top:-250px"></div>
+                <div class="foodText"><p>Burger</p></div>
             </div>
             <div class="pages" data-value="page3">
+                <div class="foodNumber"><span class="frontNumber">2</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Milkshake.png' width='700px' style="margin-top:-250px"></div>
+                <div class="foodText"><p>Milkshake</p></div>
             </div>
             <div class="pages" data-value="page4">
+                <div class="foodNumber"><span class="frontNumber">3</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Pizza.png' width='700px' style="margin-top:-250px"></div>
+                <div class="foodText"><p>Pizza</p></div>
             </div>
             <div class="pages" data-value="page5">
+                <div class="foodNumber"><span class="frontNumber">4</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Rice.png' width='700px' style="margin-top:-250px"></div>
+                <div class="foodText"><p>Rice</p></div>
             </div>
             <div class="pages" data-value="page6">
+                <div class="foodNumber"><span class="frontNumber">5</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Salad.png' width='700px' style="margin-top:-250px"></div>
+                <div class="foodText"><p>Salad</p></div>
             </div>
             <div class="pages" data-value="page7" id="MHselection">
+                <div class="foodNumber"><span class="frontNumber">6</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Water.png' width='700px' style="margin-top:-250px"></div>
+                <div class="foodText"><p>Water</p></div>
             </div>
             <div class="pages" data-value="page8" data-M="page4" data-MH="page7" data-H="page7">
                 <div class="videoTitle">
@@ -104,30 +116,42 @@
                 </div>
             </div>
             <div class="pages" data-value="page9">
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Burger.png' width='200px' style="margin-top:-250px;margin-left:700px"></div>
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Milkshake.png' width='200px' style="margin-top:-250px;margin-left:-700px"></div>
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Pizza.png' width='200px' style="margin-top:50px;margin-left:700px"></div>
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Rice.png' width='200px' style="margin-top:50px;margin-left:-700px"></div>
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Salad.png' width='200px' style="margin-top:50px;margin-left:0px"></div>
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Water.png' width='200px' style="margin-top:-250px;margin-left:0px"></div>
+                <div class="foodImage" style="margin-top:-250px;margin-left:300px"><img class="foodAnimate" src='./media/food/food_white/Burger.png' width='200px'></div>
+                <div class="foodImage" style="margin-top:-250px;margin-left:-500px"><img class="foodAnimate" src='./media/food/food_white/Milkshake.png' width='200px'></div>
+                <div class="foodImage" style="margin-top:50px;margin-left:300px"><img class="foodAnimate" src='./media/food/food_white/Pizza.png' width='200px'></div>
+                <div class="foodImage" style="margin-top:50px;margin-left:-500px"><img class="foodAnimate" src='./media/food/food_white/Rice.png' width='200px'></div>
+                <div class="foodImage" style="margin-top:50px;margin-left:-100px"><img class="foodAnimate" src='./media/food/food_white/Salad.png' width='200px'></div>
+                <div class="foodImage" style="margin-top:-250px;margin-left:-100px"><img class="foodAnimate" src='./media/food/food_white/Water.png' width='200px'></div>
             </div>
             <div class="pages M H" data-value="page10" data-M="page1" data-H="page4">
+                <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Curry.png' width='700px' style="margin-top:-250px"></div>
+                <div class="foodText"><p>Curry</p></div>
             </div>
             <div class="pages M H" data-value="page11" data-M="page2" data-H="page5">
+                <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Fries.png' width='700px' style="margin-top:-250px"></div>
+                <div class="foodText"><p>Fries</p></div>
             </div>
             <div class="pages M H" data-value="page12" data-M="page3" data-H="page6" id="Hselection">
+                <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Spaghetti.png' width='700px' style="margin-top:-250px"></div>
+                <div class="foodText"><p>Spaghetti</p></div>
             </div>
             <div class="pages MH H" data-value="page13" data-MH="page1" data-H="page1">
-                <div class="imageTitle"><img src='./media/food/flashcards_white/Sandwich.png' width='700px' style="margin-top:-250px"></div>
+                <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                <div class="imageTitle"><img src='./media/food/flashcards_white/Chicken.png' width='700px' style="margin-top:-250px"></div>
+                <div class="foodText"><p>Chicken</p></div>
             </div>
             <div class="pages MH H" data-value="page14" data-MH="page2" data-H="page2">
-                <div class="imageTitle"><img src='./media/food/flashcards_white/Chicken.png' width='700px' style="margin-top:-250px"></div>
+                <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                <div class="imageTitle"><img src='./media/food/flashcards_white/Coconut.png' width='700px' style="margin-top:-250px"></div>
+                <div class="foodText"><p>Coconut Milk</p></div>
             </div>
             <div class="pages MH H" data-value="page15" data-MH="page3" data-H="page3">
-                <div class="imageTitle"><img src='./media/food/flashcards_white/Coconut.png' width='700px' style="margin-top:-250px"></div>
+                <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                <div class="imageTitle"><img src='./media/food/flashcards_white/Sandwich.png' width='700px' style="margin-top:-250px"></div>
+                <div class="foodText"><p>Sandwich</p></div>
             </div>
             <div class="pages M H MH" data-value="page8" data-M="page4" data-MH="page4" data-H="page7">
                 <div class="videoTitle">
@@ -137,20 +161,29 @@
                 </div>
             </div>
             <div class="pages M MH" data-value="page16" data-M="page5" data-MH="page5">
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Burger.png' width='200px' style="margin-top:-250px;margin-left:700px"></div>
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Milkshake.png' width='200px' style="margin-top:-250px;margin-left:-700px"></div>
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Pizza.png' width='200px' style="margin-top:50px;margin-left:700px"></div>
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Rice.png' width='200px' style="margin-top:50px;margin-left:-700px"></div>
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Salad.png' width='200px' style="margin-top:50px;margin-left:0px"></div>
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Water.png' width='200px' style="margin-top:-250px;margin-left:0px"></div>
+                <div class="foodImage" style="margin-top:-100px;margin-left:-200px"><img class="foodAnimate" src='./media/food/food_white/Burger.png' width='180px'></div>
+                <div class="foodImage" style="margin-top:-260px;margin-left:-300px"><img class="foodAnimate" src='./media/food/food_white/Milkshake.png' width='180px'></div>
+                <div class="foodImage" style="margin-top:0px;margin-left:250px"><img class="foodAnimate" src='./media/food/food_white/Pizza.png' width='180px'></div>
+                <div class="foodImage" style="margin-top:100px;margin-left:-300px"><img class="foodAnimate" src='./media/food/food_white/Rice.png' width='180px'></div>
+                <div class="foodImage" style="margin-top:100px;margin-left:0px"><img class="foodAnimate" src='./media/food/food_white/Salad.png' width='180px'></div>
+                <div class="foodImage" style="margin-top:-100px;margin-left:50px"><img class="foodAnimate" src='./media/food/food_white/Water.png' width='180px'></div>
+                <div class="foodImage" style="margin-top:-220px;margin-left:250px"><img class="foodAnimate" src='./media/food/food_white/Spaghetti.png' width='180px'></div>
+                <div class="foodImage" style="margin-top:-250px;margin-left:-50px"><img class="foodAnimate" src='./media/food/food_white/Fries.png' width='180px'></div>
+                <div class="foodImage" style="margin-top:-120px;margin-left:-450px"><img class="foodAnimate" src='./media/food/food_white/Curry.png' width='180px'></div>
             </div>
             <div class="pages H" data-value="page17" data-H="page8">
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Burger.png' width='200px' style="margin-top:-250px;margin-left:700px"></div>
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Milkshake.png' width='200px' style="margin-top:-250px;margin-left:-700px"></div>
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Pizza.png' width='200px' style="margin-top:50px;margin-left:700px"></div>
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Rice.png' width='200px' style="margin-top:50px;margin-left:-700px"></div>
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Salad.png' width='200px' style="margin-top:50px;margin-left:0px"></div>
-                <div class="imageTitle foodAnimate"><img src='./media/food/food_white/Water.png' width='200px' style="margin-top:-250px;margin-left:0px"></div>
+                <div class="foodImage" style="margin-top:-60px;margin-left:-300px"><img class="foodAnimate" src='./media/food/food_white/Burger.png' width='150px'></div>
+                <div class="foodImage" style="margin-top:-260px;margin-left:-400px"><img class="foodAnimate" src='./media/food/food_white/Milkshake.png' width='150px'></div>
+                <div class="foodImage" style="margin-top:-50px;margin-left:220px"><img class="foodAnimate" src='./media/food/food_white/Pizza.png' width='150px'></div>
+                <div class="foodImage" style="margin-top:100px;margin-left:-450px"><img class="foodAnimate" src='./media/food/food_white/Rice.png' width='150px'></div>
+                <div class="foodImage" style="margin-top:80px;margin-left:-150px"><img class="foodAnimate" src='./media/food/food_white/Salad.png' width='150px'></div>
+                <div class="foodImage" style="margin-top:-100px;margin-left:-50px"><img class="foodAnimate" src='./media/food/food_white/Water.png' width='150px'></div>
+                <div class="foodImage" style="margin-top:-280px;margin-left:150px"><img class="foodAnimate" src='./media/food/food_white/Spaghetti.png' width='150px'></div>
+                <div class="foodImage" style="margin-top:-250px;margin-left:-100px"><img class="foodAnimate" src='./media/food/food_white/Fries.png' width='150px'></div>
+                <div class="foodImage" style="margin-top:-120px;margin-left:-500px"><img class="foodAnimate" src='./media/food/food_white/Curry.png' width='150px'></div>
+                <div class="foodImage" style="margin-top:150px;margin-left:340px"><img class="foodAnimate" src='./media/food/food_white/Chicken.png' width='150px'></div>
+                <div class="foodImage" style="margin-top:120px;margin-left:110px"><img class="foodAnimate" src='./media/food/food_white/Coconut.png' width='150px'></div>
+                <div class="foodImage" style="margin-top:-190px;margin-left:350px"><img class="foodAnimate" src='./media/food/food_white/Sandwich.png' width='150px'></div>
             </div>
         </div>
         <div id="chapter3">

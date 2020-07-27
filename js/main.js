@@ -7,7 +7,16 @@ $(function() {
 						"background.jpg",
 						"Stander_page_goodbye.png",
 						"Stander_page_Feebcack.png"
-						]
+						];
+
+	// init of cover page
+	$('.roster, .previous, .topButton').css('visibility','hidden');
+	$('.Hbutton, Mbutton').hide();
+	
+    setTimeout(function() {
+    	$(".next").trigger('click');
+        $("#topButton2").trigger('click');
+    },10);
 
 	// TopButton
 	var preButton = "topButton1";
@@ -83,15 +92,7 @@ $(function() {
 				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[5] +'")');
 			}
 
-			// Hbutton and Mbutton
-			if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "MHselection")
-			{
-				$('.Mbutton, .Hbutton').show();
-			}
-			else if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "Hselection")
-			{
-				$('.Hbutton').show();
-			}
+			upadateMHbutton(pageNumber,index, Hflag);
 		}
 		else if(index == 1)
 		{
@@ -127,6 +128,8 @@ $(function() {
 
 	})
 
+	var Hflag = false;
+	var foodFlag = "M";
 	$('.Hbutton, .Mbutton').click(function(e){
 		curPage = $('.active.pages').attr('id');
 		console.log(curPage);
@@ -135,15 +138,20 @@ $(function() {
 			if (curPage == "Hselection")
 			{
 				newNumber = MHnumber;
+				foodFlag = "MH";
 			}
 			else if(curPage == "MHselection")
 			{
 				newNumber = Hnumber;
+				foodFlag = "H";
 			}
+			Hflag = true;
 		}
 		else
 		{
 			newNumber = Mnumber;
+			foodFlag = "M";
+			Hflag = false;
 		}
 
 		// update page index
@@ -153,18 +161,36 @@ $(function() {
 		start = pageNumber.slice(0,indexStart+1);
 		end = pageNumber.slice(indexEnd,pageNumber.length);
 
-		console.log(start)
-		console.log(end)
-		console.log(newNumber)
 		pageNumber=$.merge($.merge(start,newNumber),end);
-
-		console.log(pageNumber);
 
 		indexStart++;
 
 		$('.pages').removeClass("active");
 		$('#chapter'+pageNumber[indexStart][0]).find("[data-value=page"+pageNumber[indexStart][1]+"]").addClass("active");
+
+		updateFoodNumber(newNumber,foodFlag,pageNumber);
+
+		upadateMHbutton(pageNumber,indexStart,Hflag);
+
+
 	})
+
+	$('.imageTitle').click(function(e){
+		$(this).siblings('.foodText').show();
+	})
+
+
+	$('.foodAnimate').click(function(){
+		$('.foodAnimate').removeClass('shakeit');
+		$(this).addClass('shakeit');
+	})
+
+	// action when click outside target
+	$(document).on('click', function(e){
+		if(!$(e.target).closest(".shakeit").length)
+        	$('.foodAnimate').removeClass('shakeit');
+    }) 
+
 
 	function countPages (length,n){
 		var number = [];
@@ -221,6 +247,34 @@ $(function() {
 		var media = $("#hfVideo").get(0);
 		media.pause();
 		media.currentTime = 0;
+	}
+
+	function upadateMHbutton(pageNumber, index, Hflag){
+		// Hbutton and Mbutton
+		$('.Mbutton, .Hbutton').hide();
+		if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "MHselection")
+		{
+			$('.Mbutton, .Hbutton').css("display","block");
+		}
+		else if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "Hselection" && !Hflag)
+		{
+
+			$('.Hbutton').css("display","block");
+		}
+	}
+
+	function updateFoodNumber(newNumber,flag,pageNumber){
+		//update food number
+		sumNumber = $(".pages."+flag).find(".foodNumber").length;
+		$(".pages."+flag).find(".backNumber").text(sumNumber);
+		for(var i=0; i<newNumber.length; i++)
+		{
+			foodIndex = getIndexOf(pageNumber,newNumber[i]);
+			foodNumber = $('#chapter'+pageNumber[foodIndex][0]).find("[data-value=page"+pageNumber[foodIndex][1]+"]").attr("data-"+flag);
+			foodNumber = Number(foodNumber.match(/\d+/)[0]);
+			$('#chapter'+pageNumber[foodIndex][0]).find("[data-value=page"+pageNumber[foodIndex][1]+"]").find(".frontNumber").text(foodNumber);
+		}
+
 	}
 
 

@@ -31,7 +31,7 @@ iframe {
 
 body {
     color: #4a4a4a;
-    background-image: url(../media/Background/Stander_page_Hello.png);
+    background-image: url(../media/Background/Stander_page_Cover.png);
     background-repeat:no-repeat ;
     background-size:100% 100%;
     background-attachment: fixed;
@@ -60,14 +60,14 @@ body {
 }
 
 #leftButtonMenu{
-    top:4.8%;
+    top:14.8%;
     position:fixed;
     left:0%;
     z-index: 1000;
 }
 
 #rightButtonMenu{
-    top:4.8%;
+    top:14.8%;
     position:fixed;
     right:0%;
     text-align: right;
@@ -75,13 +75,14 @@ body {
 }
 
 .sideButton{
-	margin: 5px -6px;
-	display: inline-block;
+	margin: 10px -6px;
+	display: table;
 }
 
 .roster{
-	padding:0px 30px;
-	
+	padding:0px 40px;
+	position: absolute;
+	top:-70px;
 }
 
 .pages{
@@ -113,6 +114,7 @@ body {
 	right:0;
 	width:1200px;
 	margin-left:-600px;
+	margin-top:50px;
 	position: fixed;
 	text-align: center;
 }
@@ -145,3 +147,69 @@ body {
 .Hbutton, .Mbutton{
 	display: none;
 }
+
+.foodNumber{
+	font-family: EducationVAGRounded-Bold;
+	color: black;
+	font-size: 40px;
+	z-index: 50;
+	left: 50%;
+    top: 50%;
+    right:0;
+	width:1200px;
+	margin-left:-600px;
+	margin-top:-270px;
+	position: fixed;
+	text-align: center;
+}
+
+.foodImage{
+	top:50%;
+	left:50%;
+	position: fixed;
+	text-align: center;
+}
+
+.foodText{
+	display: none;
+	font-family: EducationVAGRounded-Bold;
+	color: black;
+	font-size: 80px;
+	z-index: 50;
+	left: 50%;
+    top: 50%;
+    right:0;
+	width:1200px;
+	margin-left:-600px;
+	margin-top:100px;
+	position: fixed;
+	text-align: center;
+}
+
+.imageTitle > img, .foodImage > img {
+	cursor: pointer;
+}
+
+
+
+@-webkit-keyframes shake {
+  0%  { -webkit-transform:     translate(2px, 1px) rotate(0deg); }
+  10% { -webkit-transform:     translate(-1px, -2px) rotate(-2deg); }
+  20% { -webkit-transform:     translate(-3px, 0px) rotate(3deg); }
+  30% { -webkit-transform:     translate(0px, 2px) rotate(0deg); }
+  40% { -webkit-transform:     translate(1px, -1px) rotate(1deg); }
+  50% { -webkit-transform:     translate(-1px, 2px) rotate(-1deg); }
+  60% { -webkit-transform:     translate(-3px, 1px) rotate(0deg); }
+  70% { -webkit-transform:     translate(2px, 1px) rotate(-2deg); }
+  80% { -webkit-transform:     translate(-1px, -1px) rotate(4deg); }
+  90% { -webkit-transform:     translate(2px, 2px) rotate(0deg); }
+  100%{ -webkit-transform:     translate(1px, -2px) rotate(-1deg); }
+ }
+
+ .shakeit{
+    -webkit-animation-name:              shake;    
+    -webkit-animation-duration:          0.8s;
+    -webkit-animation-iteration-count:   infinite;
+    -webkit-animation-timing-function:   linear;
+    -webkit-transform-origin:            50% 100%;
+ }
