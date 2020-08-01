@@ -1,0 +1,73 @@
+#chapter6 > [data-value="page3"] > .specialImage{
+	bottom:0%;
+	left:50%;
+	right:0;
+	width:1200px;
+	margin-left:-600px;
+	position: fixed;
+	text-align: center;
+}
+
+#chapter6 > [data-value="page4"] > .quizImage{
+	margin-top:0px;
+}
+
+#chapter6 > [data-value="page5"] > .quizImage:nth-child(2){
+	margin-top:-180px;
+}
+
+#chapter6 > [data-value="page5"] > .quizImage:nth-child(3){
+	margin-top:150px;
+}
+
+#chapter6 > [data-value="page6"] > .quizImage{
+	margin-top:0px;
+}
+
+#chapter6 > [data-value="page7"] > .quizImage:nth-child(2){
+	margin-top:-180px;
+}
+
+#chapter6 > [data-value="page7"] > .quizImage:nth-child(3){
+	margin-top:150px;
+}
+
+#chapter6 > [data-value="page10"] > .quizImage{
+	margin-top:0px;
+}
+
+#chapter6 > [data-value="page12"] > .quizImage{
+	margin-top:0px;
+}
+
+#chapter6 > [data-value="page14"] > .quizImage{
+	margin-top:0px;
+}
+
+#chapter6 > [data-value="page16"] > .quizImage:nth-child(2){
+	margin-top:-180px;
+}
+
+#chapter6 > [data-value="page16"] > .quizImage:nth-child(3){
+	margin-top:150px;
+}
+
+#chapter6 > [data-value="page19"] > .quizImage{
+	margin-top:0px;
+}
+
+#chapter6 > [data-value="page22"] > .quizImage:nth-child(2){
+	margin-top:-120px
+}
+
+#chapter6 > [data-value="page22"] > .quizImage:nth-child(3){
+	margin-top:150px;
+}
+
+#chapter6 > [data-value="page23"] > .quizImage:nth-child(2){
+	margin-top:-180px;
+}
+
+#chapter6 > [data-value="page23"] > .quizImage:nth-child(3){
+	margin-top:150px;
+}

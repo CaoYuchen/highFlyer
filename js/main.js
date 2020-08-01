@@ -15,7 +15,7 @@ $(function() {
 	
     setTimeout(function() {
     	$(".next").trigger('click');
-        $("#topButton2").trigger('click');
+        $("#topButton6").trigger('click');
     },10);
 
 	// TopButton
@@ -44,6 +44,16 @@ $(function() {
     		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[2] +'")');
     	}
 
+    	// update HF button
+		if(curNumber == 6)
+		{
+			$('.Mbutton, .Hbutton').css("display","block");
+		}
+		else
+		{
+			$('.Mbutton, .Hbutton').hide();
+		}
+
     	// toggle content
     	$('.pages').removeClass("active");
     	$('#chapter'+curNumber).find("[data-value=page1]").addClass("active");
@@ -56,13 +66,16 @@ $(function() {
 	var pageNumber = [];
 	for (var i=0; i<8;i++)
 	{
-		pageNumber = $.merge(pageNumber,countPages($('#chapter' + i +' > .pages').not('.H, .M, .MH').length,i));
+		pageNumber = $.merge(pageNumber,countPages($('#chapter' + i +' > .pages').not('.H, .M, .MH, .qM, .qH').length,i));
 	}
 
 	var vocabularyChapter = 2;
+	var quizChapter = 6;
 	var Mnumber = countPagesMH($('.M.pages').length, vocabularyChapter,'M');
 	var MHnumber = countPagesMH($('.MH.pages').length, vocabularyChapter,'MH');
 	var Hnumber = countPagesMH($('.H.pages').length, vocabularyChapter,'H');
+	var quizM = countPagesMH($('.qM.pages').length, quizChapter,'qM');
+	var quizH = countPagesMH($('.qH.pages').length, quizChapter,'qH');
 	
 	// SideButton
 	var number = pageNumber.length;
@@ -91,8 +104,10 @@ $(function() {
 			{
 				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[5] +'")');
 			}
-
-			upadateMHbutton(pageNumber,index, Hflag);
+			else
+			{
+				upadateMHbutton(pageNumber,index, Hflag);
+			}
 		}
 		else if(index == 1)
 		{
@@ -106,6 +121,12 @@ $(function() {
 		else
 		{
 			$('body').css('background-image', 'url("./media/Background/'+ backgrounds[2] +'")');
+
+			// update quizSelection
+			if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "quizSelection")
+			{
+				upadateMHbutton(pageNumber,index, false);
+			}
 		}
 
 		// toggle content
@@ -139,19 +160,33 @@ $(function() {
 			{
 				newNumber = MHnumber;
 				foodFlag = "MH";
+				Hflag = true;
 			}
 			else if(curPage == "MHselection")
 			{
 				newNumber = Hnumber;
 				foodFlag = "H";
+				Hflag = true;
 			}
-			Hflag = true;
+			else if(curPage == "quizSelection")
+			{
+				newNumber = quizH;
+				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
+			}
 		}
 		else
 		{
-			newNumber = Mnumber;
-			foodFlag = "M";
-			Hflag = false;
+			if (curPage == "Mselection")
+			{
+				newNumber = Mnumber;
+				foodFlag = "M";
+				Hflag = false;
+			}
+			else if (curPage == "quizSelection")
+			{
+				newNumber = quizM;
+				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
+			}
 		}
 
 		// update page index
@@ -168,9 +203,17 @@ $(function() {
 		$('.pages').removeClass("active");
 		$('#chapter'+pageNumber[indexStart][0]).find("[data-value=page"+pageNumber[indexStart][1]+"]").addClass("active");
 
-		updateFoodNumber(newNumber,foodFlag,pageNumber);
-
-		upadateMHbutton(pageNumber,indexStart,Hflag);
+		
+		if(curPage.includes("MSelection")||curPage.includes("MHSelection")||curPage.includes("HSelection"))
+		{
+			updateFoodNumber(newNumber,foodFlag,pageNumber);
+			upadateMHbutton(pageNumber,indexStart,Hflag);
+		}
+		else if(curPage.includes("quizSelection"))
+		{
+			upadateMHbutton(pageNumber,indexStart,false);
+		}
+		
 
 
 	})
@@ -190,6 +233,21 @@ $(function() {
 		if(!$(e.target).closest(".shakeit").length)
         	$('.foodAnimate').removeClass('shakeit');
     }) 
+
+	$('.alpha').click(function(){
+		src = $(this).attr('src');
+		ans = $(this).attr('data-answer');
+		console.log(ans);
+		if(ans == "true")
+		{
+			src=src.replace('normal','correct');
+		}
+		else
+		{
+			src=src.replace('normal','incorrect');
+		}
+		$(this).attr('src',src);
+	})
 
 
 	function countPages (length,n){
@@ -249,10 +307,11 @@ $(function() {
 		media.currentTime = 0;
 	}
 
-	function upadateMHbutton(pageNumber, index, Hflag){
+	function upadateMHbutton(pageNumber, index, Hflag=false){
 		// Hbutton and Mbutton
 		$('.Mbutton, .Hbutton').hide();
-		if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "MHselection")
+		if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "MHselection"
+			|| $('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "quizSelection")
 		{
 			$('.Mbutton, .Hbutton').css("display","block");
 		}
