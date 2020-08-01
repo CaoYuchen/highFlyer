@@ -140,7 +140,7 @@ $(function() {
     	$("#"+curButton).find('img').attr('src',buttonSrc);
 
     	preNumber = Number(preButton.match(/\d+/)[0]);
-    	preButton = $("#"+curButton).attr('id'); 
+    	preButton = $("#"+curButton).attr('id');
     	curNumber = Number(preButton.match(/\d+/)[0]);
     	
     	buttonPath = buttonPath.replace(preNumber,curNumber);
@@ -151,9 +151,10 @@ $(function() {
 
 	var Hflag = false;
 	var foodFlag = "M";
+	var curChapter;
 	$('.Hbutton, .Mbutton').click(function(e){
 		curPage = $('.active.pages').attr('id');
-		console.log(curPage);
+		curChapter = vocabularyChapter;
 		if($(this).attr('class').includes('Hbutton'))
 		{
 			if (curPage == "Hselection")
@@ -172,11 +173,12 @@ $(function() {
 			{
 				newNumber = quizH;
 				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
+				curChapter = quizChapter;
 			}
 		}
 		else
 		{
-			if (curPage == "Mselection")
+			if (curPage == "MHselection")
 			{
 				newNumber = Mnumber;
 				foodFlag = "M";
@@ -186,12 +188,13 @@ $(function() {
 			{
 				newNumber = quizM;
 				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
+				curChapter = quizChapter;
 			}
 		}
 
 		// update page index
-		indexStart = getIndexOf(pageNumber,[vocabularyChapter,Number($('#'+curPage).attr('data-value').match(/\d+/)[0])]);
-		indexEnd = getIndexOf(pageNumber,[vocabularyChapter+1,1]);
+		indexStart = getIndexOf(pageNumber,[curChapter,Number($('#'+curPage).attr('data-value').match(/\d+/)[0])]);
+		indexEnd = getIndexOf(pageNumber,[curChapter+1,1]);
 
 		start = pageNumber.slice(0,indexStart+1);
 		end = pageNumber.slice(indexEnd,pageNumber.length);
@@ -204,7 +207,7 @@ $(function() {
 		$('#chapter'+pageNumber[indexStart][0]).find("[data-value=page"+pageNumber[indexStart][1]+"]").addClass("active");
 
 		
-		if(curPage.includes("MSelection")||curPage.includes("MHSelection")||curPage.includes("HSelection"))
+		if(curPage.includes("MHselection") || curPage.includes("Hselection"))
 		{
 			updateFoodNumber(newNumber,foodFlag,pageNumber);
 			upadateMHbutton(pageNumber,indexStart,Hflag);
