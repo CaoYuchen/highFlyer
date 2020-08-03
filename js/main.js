@@ -64,18 +64,25 @@ $(function() {
 
 	// countPages
 	var pageNumber = [];
-	for (var i=0; i<8;i++)
+	for (var i=0; i<9;i++)
 	{
-		pageNumber = $.merge(pageNumber,countPages($('#chapter' + i +' > .pages').not('.H, .M, .MH, .qM, .qH').length,i));
+		pages = $('#chapter' + i +' > .pages').not('.H, .M, .MH, .qM, .qH, .fM, .fH');
+		pageNumber = $.merge(pageNumber,countPages(pages, pages.length, i));
 	}
+
+	console.log(pageNumber);
 
 	var vocabularyChapter = 2;
 	var quizChapter = 6;
+	var finaleChapter = 7;
+	var finalePage = 2;
 	var Mnumber = countPagesMH($('.M.pages').length, vocabularyChapter,'M');
 	var MHnumber = countPagesMH($('.MH.pages').length, vocabularyChapter,'MH');
 	var Hnumber = countPagesMH($('.H.pages').length, vocabularyChapter,'H');
 	var quizM = countPagesMH($('.qM.pages').length, quizChapter,'qM');
 	var quizH = countPagesMH($('.qH.pages').length, quizChapter,'qH');
+	var finaleM = countPagesMH($('.fM.pages').length, finaleChapter,'fM');
+	var finaleH = countPagesMH($('.fH.pages').length, finaleChapter,'fH');
 	
 	// SideButton
 	var number = pageNumber.length;
@@ -171,6 +178,10 @@ $(function() {
 			}
 			else if(curPage == "quizSelection")
 			{
+				finaleStart = getIndexOf(pageNumber,[finaleChapter,Number($('.fM.pages').eq(0).attr('data-value').match(/\d+/)[0])-2]);
+				finaleEnd = getIndexOf(pageNumber,[finaleChapter,Number($('.fH.pages').last().attr('data-value').match(/\d+/)[0])+1]);
+				[pageNumber,] = updatePageIndex(pageNumber,finaleStart,finaleEnd,finaleH);
+
 				newNumber = quizH;
 				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
 				curChapter = quizChapter;
@@ -186,6 +197,10 @@ $(function() {
 			}
 			else if (curPage == "quizSelection")
 			{
+				finaleStart = getIndexOf(pageNumber,[finaleChapter,Number($('.fM.pages').eq(0).attr('data-value').match(/\d+/)[0])-2]);
+				finaleEnd = getIndexOf(pageNumber,[finaleChapter,Number($('.fH.pages').last().attr('data-value').match(/\d+/)[0])+1]);
+				[pageNumber,] = updatePageIndex(pageNumber,finaleStart,finaleEnd,finaleM);
+
 				newNumber = quizM;
 				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
 				curChapter = quizChapter;
@@ -195,13 +210,8 @@ $(function() {
 		// update page index
 		indexStart = getIndexOf(pageNumber,[curChapter,Number($('#'+curPage).attr('data-value').match(/\d+/)[0])]);
 		indexEnd = getIndexOf(pageNumber,[curChapter+1,1]);
+		[pageNumber,indexStart] = updatePageIndex(pageNumber,indexStart,indexEnd,newNumber);
 
-		start = pageNumber.slice(0,indexStart+1);
-		end = pageNumber.slice(indexEnd,pageNumber.length);
-
-		pageNumber=$.merge($.merge(start,newNumber),end);
-
-		indexStart++;
 
 		$('.pages').removeClass("active");
 		$('#chapter'+pageNumber[indexStart][0]).find("[data-value=page"+pageNumber[indexStart][1]+"]").addClass("active");
@@ -253,11 +263,12 @@ $(function() {
 	})
 
 
-	function countPages (length,n){
+	function countPages (pages,length,n){
 		var number = [];
 		for(var i = 0; i < length; i++)
 		{
-			number[i] = [n,i+1];
+			k = Number(pages.eq(i).attr('data-value').match(/\d+/)[0]);
+			number[i] = [n,k];
 		}
 		return number;
 	}
@@ -339,6 +350,17 @@ $(function() {
 
 	}
 
+	function updatePageIndex(pageNumber, indexStart, indexEnd, newNumber) {
+		// update page index
+		start = pageNumber.slice(0,indexStart+1);
+		end = pageNumber.slice(indexEnd,pageNumber.length);
+
+		pageNumber=$.merge($.merge(start,newNumber),end);
+
+		indexStart ++;
+
+		return [pageNumber,indexStart];
+	}
 
 })
 
