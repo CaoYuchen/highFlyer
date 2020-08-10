@@ -32,42 +32,79 @@
 	margin-top:150px;
 }
 
-#chapter6 > [data-value="page10"] > .quizImage{
+#chapter6 > [data-value="page9"] > .quizImage{
 	margin-top:0px;
 }
 
-#chapter6 > [data-value="page12"] > .quizImage{
+#chapter6 > [data-value="page11"] > .quizImage{
 	margin-top:0px;
 }
 
-#chapter6 > [data-value="page14"] > .quizImage{
+#chapter6 > [data-value="page13"] > .quizImage{
 	margin-top:0px;
 }
 
-#chapter6 > [data-value="page16"] > .quizImage:nth-child(2){
+#chapter6 > [data-value="page14"] > .quizImage:nth-child(2){
 	margin-top:-180px;
 }
 
-#chapter6 > [data-value="page16"] > .quizImage:nth-child(3){
+#chapter6 > [data-value="page14"] > .quizImage:nth-child(3){
+	margin-top:50px;
+}
+
+#chapter6 > [data-value="page14"] > .quizImage:nth-child(4){
+	margin-top:180px;
+}
+
+#chapter6 > [data-value="page14"] > .quizImage:nth-child(4) > img{
+	margin:0 40px;
+}
+
+#chapter6 > [data-value="page15"] > .quizImage:nth-child(2){
+	margin-top:-180px;
+}
+
+#chapter6 > [data-value="page15"] > .quizImage:nth-child(3){
 	margin-top:150px;
+}
+
+#chapter6 > [data-value="page18"] > .quizImage{
+	margin-top:0px;
 }
 
 #chapter6 > [data-value="page19"] > .quizImage{
-	margin-top:0px;
-}
-
-#chapter6 > [data-value="page22"] > .quizImage:nth-child(2){
-	margin-top:-120px
-}
-
-#chapter6 > [data-value="page22"] > .quizImage:nth-child(3){
-	margin-top:150px;
-}
-
-#chapter6 > [data-value="page23"] > .quizImage:nth-child(2){
 	margin-top:-180px;
 }
 
-#chapter6 > [data-value="page23"] > .quizImage:nth-child(3){
+#chapter6 > [data-value="page20"] > .quizImage:nth-child(2){
+	margin-top:-150px;
+	margin-left:-200px;
+}
+
+#chapter6 > [data-value="page20"] > .quizImage:nth-child(3){
+	margin-top:-50px;
+}
+
+#chapter6 > [data-value="page20"] > .quizImage:nth-child(4){
+	margin-top:80px;
+}
+
+#chapter6 > [data-value="page20"] > .quizImage:nth-child(4) > img{
+	margin:0 40px;
+}
+
+#chapter6 > [data-value="page21"] > .quizImage:nth-child(2){
+	margin-top:-120px
+}
+
+#chapter6 > [data-value="page21"] > .quizImage:nth-child(3){
+	margin-top:150px;
+}
+
+#chapter6 > [data-value="page22"] > .quizImage:nth-child(2){
+	margin-top:-180px;
+}
+
+#chapter6 > [data-value="page22"] > .quizImage:nth-child(3){
 	margin-top:150px;
 }

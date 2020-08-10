@@ -118,6 +118,35 @@ body {
 	text-align: center;
 }
 
+.structureTitle{
+	bottom: 0%;
+	left:50%;
+	width:1600px;
+	margin-left:-800px;
+	position: fixed;
+	text-align: center;
+	z-index: -1;
+}
+
+.buildWordsTitle{
+	top:50%;
+	left:50%;
+	width:1400px;
+	margin-left: -700px;
+	margin-top:-150px;
+	position: fixed;
+	text-align: center;
+}
+
+.bwBox{
+	display: inline-block;
+	margin: 0 75px;
+}
+
+.structureBox{
+	display: inline-block;
+}
+
 .finaleTitle{
 	bottom:0%;
 	left:50%;
@@ -185,6 +214,63 @@ body {
 	text-align: center;
 }
 
+.bwUp img, .bwDown img{
+	margin:0 5px;
+}
+
+.bwDown {
+	margin-top:30px;
+}
+
+.dropBox{
+	display: inline-block;
+}
+
+.structureLeft{
+	display: inline-block;
+	position: absolute;
+	left: 350px;
+	top:220px;
+}
+
+.structureRight{
+	display: inline-block;
+	position: absolute;
+	right:215px;
+	top:110px;
+}
+
+.structureMid{
+	width:500px;
+}
+
+.structureMid > img{
+	margin:2px 0;
+}
+
+.foodPriceLeft{
+	display: inline-block;
+	position: absolute;
+	width:500px;
+	left:150px;
+	top:40px;
+}
+
+.foodPriceRight{
+	display: inline-block;
+	position: absolute;
+	width:500px;
+	right:150px;
+	top:40px;
+}
+
+.foodPriceLeft > img, .foodPriceRight >img{
+	margin:2px 0;
+}
+
+.foodPriceMid{
+	margin-top: 150px;
+}
 
 .alphaBox{
 	top:50%;
@@ -230,6 +316,20 @@ body {
 	display: inline-block;
 }
 
+.resetButton{
+	top:12%;
+	left:50%;
+	width:100px;
+	margin-left:-50px;
+	position: fixed;
+	text-align: center;
+	z-index: 100;
+	cursor: pointer;
+}
+
+.pin{
+	display: none;
+}
 
 .imageTitle > img, .foodImage > img {
 	cursor: pointer;
@@ -243,7 +343,33 @@ body {
 	margin-top:-350px;
 }
 
+#chapter3 .imageTitle > img{
+	margin-top:-250px;
+}
+#chapter3 .imageTitle > canvas{
+	margin-top:-250px;
+	z-index: 100;
+}
 
+
+/*chaptter 4 and chapter 5*/
+#chapter5 > [data-value="page7"] > .imageTitle > img{
+	margin-top:-350px;
+}
+
+#chapter4 > [data-value="page8"] > .imageTitle:nth-child(1){
+	margin-top:-200px;
+}
+#chapter4 > [data-value="page8"] > .imageTitle:nth-child(2){
+	margin-top: -117px;
+}
+#chapter4 > [data-value="page8"] > .imageTitle:nth-child(3){
+	margin-top:100px;
+}
+
+#chapter4 > [data-value="page8"] > .imageTitle img{
+	margin: 0 25px;
+}
 
 
 @-webkit-keyframes shake {
