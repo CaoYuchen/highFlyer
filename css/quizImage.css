@@ -32,6 +32,11 @@
 	margin-top:150px;
 }
 
+#chapter6 > [data-value="page8"] hr{
+	display: inline-block;
+	margin:0 30px;
+}
+
 #chapter6 > [data-value="page9"] > .quizImage{
 	margin-top:0px;
 }

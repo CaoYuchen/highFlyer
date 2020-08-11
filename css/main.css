@@ -128,6 +128,15 @@ body {
 	z-index: -1;
 }
 
+.structureDown{
+	bottom: 0%;
+	left:50%;
+	width:1600px;
+	margin-left:-800px;
+	position: fixed;
+	text-align: center;
+}
+
 .buildWordsTitle{
 	top:50%;
 	left:50%;
@@ -229,15 +238,17 @@ body {
 .structureLeft{
 	display: inline-block;
 	position: absolute;
-	left: 350px;
-	top:220px;
+	top: -430px;
+	left:350px;
+	z-index: 100;
 }
 
 .structureRight{
 	display: inline-block;
 	position: absolute;
+	z-index: 100;
 	right:215px;
-	top:110px;
+	top: -540px;
 }
 
 .structureMid{

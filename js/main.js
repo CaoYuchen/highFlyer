@@ -144,6 +144,14 @@ $(function() {
 			{
 				upadateMHbutton(pageNumber,index, false);
 			}
+			else if(wheel3Flag && pageNumber[index][0] == phonicsChapter && pageNumber[index][1] == 1)
+			{
+				index = updateIndex(type,pageNumber,index);
+				if(type.includes("previous"))
+				{
+					$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
+				}
+			}
 		}
 
 		// toggle content
@@ -167,6 +175,7 @@ $(function() {
 	})
 
 	var Hflag = false;
+	var wheel3Flag = false;
 	var foodFlag = "M";
 	var curChapter;
 	$('.Hbutton, .Mbutton, .wheelButton').click(function(e){
@@ -234,17 +243,30 @@ $(function() {
 			if(curButton == "wheelButtonLow")
 			{
 				newNumber = sL;
+				$("#topButton4").attr("disabled",false);
 			}
 			else if(curButton == "wheelButtonMid")
 			{
 				newNumber = sM;
+				$("#topButton4").attr("disabled",false);
 			}
 			else if(curButton == "wheelButtonHigh")
 			{
 				newNumber = sH;
+				finaleStart = getIndexOf(pageNumber,[structureChapter+1,1]);
+				finaleEnd = getIndexOf(pageNumber,[structureChapter+2,1]);
+				[pageNumber,] = updatePageIndex(pageNumber,finaleStart,finaleEnd,[]);
+
+				$("#topButton4").attr("disabled",true);
+				wheel3Flag = true;
 			}
 			$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
 			curChapter = structureChapter;
+		}
+
+		if($(this).attr('id') != "wheelButtonHigh")
+		{
+			wheel3Flag = false;
 		}
 
 		// update page index
@@ -285,22 +307,34 @@ $(function() {
 	$(document).on('click', function(e){
 		if(!$(e.target).closest(".shakeit").length)
         	$('.foodAnimate').removeClass('shakeit');
-    }) 
+    })
 
+    const correctSound = new Audio("./media/quiz/sound/correct.mp3");
+    const incorrectSound = new Audio("./media/quiz/sound/incorrect.mp3");
 	$('.alpha').click(function(){
 		src = $(this).attr('src');
 		ans = $(this).attr('data-answer');
-		console.log(ans);
-		if(ans == "true")
+		pauseVideo();
+
+		if(ans == "true" && src.includes('normal'))
 		{
 			src=src.replace('normal','correct');
+			correctSound.play();
 		}
-		else
+		else if(ans == "false" && src.includes('normal'))
 		{
 			src=src.replace('normal','incorrect');
+			incorrectSound.play();
 		}
 		$(this).attr('src',src);
 	})
+
+	function pauseVideo(){
+		correctSound.pause();
+		correctSound.src = correctSound.src;
+		incorrectSound.pause();
+		incorrectSound.src = incorrectSound.src;
+	}
 
 	var resetPath = "slot/graybox.png";
 	$('.resetButton').click(function(){
