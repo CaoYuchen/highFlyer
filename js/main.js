@@ -288,9 +288,11 @@ $(function() {
 		{
 			upadateMHbutton(pageNumber,indexStart,false);
 		}
-		
+	})
 
-
+	//roster 
+	$(".roster").click(function() {
+		$('#rosterPopup').modal('show');
 	})
 
 	$('.imageTitle').click(function(e){
@@ -722,8 +724,8 @@ $(function() {
 
 	for(i=0; i<$('.pinCanvas').length; i++)
 	{
-		image = $(this).find(".pin > img")[0];
-		canvas = $(this).find(".pinCanvas")[0];
+		image = $('.wheel').eq(i).find(".pin > img")[0];
+		canvas = $('.wheel').eq(i).find(".pinCanvas")[0];
 		var ctx = canvas.getContext("2d");
 		drawRouletteWheel(canvas, image);
 	}
@@ -731,12 +733,11 @@ $(function() {
 	function drawRouletteWheel(canvas,image) {
 	    if (canvas.getContext) {
 	        var ctx = canvas.getContext("2d");
-	        ctx.clearRect(0, 0, canvas.width, canvas.height);
 	        image.onload=function(){
+	        	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	        	ctx.drawImage(image, 0, 0);
-	        }
-	        
-	        
+	        	ctx.save();
+	        } 
 	    }
 	}
 

@@ -21,6 +21,8 @@
     <link type="text/css" href="./css/foodImage.css" rel='stylesheet'>
     <link type="text/css" href="./css/quizImage.css" rel='stylesheet'>
     <link type="text/css" href="./css/structureImage.css" rel='stylesheet'>
+    <!-- popup -->
+    <link type="text/css" href="./css/popup.css" rel='stylesheet'>
 
 </head>
 
@@ -896,6 +898,19 @@
             <div class="pages" data-value="page6"></div>
         </div>
 
+    </div>
+
+    <div class="modal fade right" id="rosterPopup" tabindex="-1" role="dialog" aria-labelledby="rosterPopupLabel" aria-hidden="true">
+        <div class="modal-dialog-full-width modal-dialog momodel modal-fluid" role="document">
+            <div class="modal-content-full-width modal-content">
+                <div class="modal-body modal-body-full-width">
+                    <button id="rosterBack" data-dismiss="modal" aria-label="Close">
+                        <img src="./media/buttons/back.png" width="150px">
+                    </button>
+                    <iframe id="roster" src='./roster/main.html' frameborder='0' scrolling='no' width="100%" height="100%"></iframe>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>

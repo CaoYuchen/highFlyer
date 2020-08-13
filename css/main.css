@@ -343,6 +343,12 @@ body {
 	display: none;
 }
 
+#rosterBack{
+	position: absolute;
+	left: 30px;
+	top:35px;
+}
+
 .imageTitle > img, .foodImage > img {
 	cursor: pointer;
 }
