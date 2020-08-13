@@ -116,6 +116,7 @@ body {
 	margin-left:-600px;
 	position: fixed;
 	text-align: center;
+	display:;
 }
 
 .structureTitle{
@@ -355,11 +356,12 @@ body {
 }
 
 #chapter3 .imageTitle > img{
-	margin-top:-250px;
+	margin-top: -230px;
 }
-#chapter3 .imageTitle > canvas{
+#chapter3 .imageTitle > .pinCanvas{
 	margin-top:-250px;
 	z-index: 100;
+	position: absolute;
 }
 
 

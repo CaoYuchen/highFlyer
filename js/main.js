@@ -13,10 +13,10 @@ $(function() {
 	$('.roster, .previous, .topButton').css('visibility','hidden');
 	$('.Hbutton, Mbutton').hide();
 	
-    setTimeout(function() {
-    	$(".next").trigger('click');
-        $("#topButton3").trigger('click');
-    },10);
+    // setTimeout(function() {
+    // 	$(".next").trigger('click');
+    //     $("#topButton3").trigger('click');
+    // },10);
 
 	// TopButton
 	var preButton = "topButton1";
@@ -707,46 +707,47 @@ $(function() {
 
 	// wheel
 	$('.wheel').click(function(){
-		spin();
+		image = $(this).find(".pin > img")[0];
+		canvas = $(this).find(".pinCanvas")[0];
+		spin(canvas,image);
 	})
 
-
-	// var wheelPath = ['./media/Wheel/wheel_pin/low.png',
-	// 				'./media/Wheel/wheel_pin/mid.png',
-	// 				'./media/Wheel/wheel_pin/high.png'];
 	var startAngle = 0;
 	var arc = Math.PI / (18 / 2);
 	var spinTimeout = null;
 	var spinArcStart = 10;
 	var spinTime = 0;
 	var spinTimeTotal = 0;
-	var wheelPath = ['./media/Wheel/wheel_pin/low.png',
-					'./media/Wheel/wheel_pin/mid.png',
-					'./media/Wheel/wheel_pin/high.png'];
-	var wheelctx= [];
+	var canvas, image;
+
 	for(i=0; i<$('.pinCanvas').length; i++)
 	{
-		drawRouletteWheel($('.pinCanvas:eq('+i+')')[0],wheelPath[i]);
+		image = $(this).find(".pin > img")[0];
+		canvas = $(this).find(".pinCanvas")[0];
+		var ctx = canvas.getContext("2d");
+		drawRouletteWheel(canvas, image);
 	}
 	
-	function drawRouletteWheel(canvas,path) {
-		if (canvas.getContext('2d')) {
-			var image = new Image();
-    		image.src = path;
-		    ctx = canvas.getContext("2d");
-		    ctx.clearRect(0, 0, 500, 551);
-		    ctx.drawImage(image, 0, 0, 500, 551);    
-		}
+	function drawRouletteWheel(canvas,image) {
+	    if (canvas.getContext) {
+	        var ctx = canvas.getContext("2d");
+	        ctx.clearRect(0, 0, canvas.width, canvas.height);
+	        image.onload=function(){
+	        	ctx.drawImage(image, 0, 0);
+	        }
+	        
+	        
+	    }
 	}
 
-	function spin() {
+	function spin(canvas, image) {
 	    spinAngleStart = Math.random() * 10 + 10;
 	    spinTime = 0;
 	    spinTimeTotal = Math.random() * 3 + 4 * 1000;
-	    rotateWheel();
+	    rotateWheel(canvas, image);
 	}
 
-	function rotateWheel() {
+	function rotateWheel(canvas, image) {
 	    spinTime += 30;
 	    if (spinTime >= spinTimeTotal) {
 	        stopRotateWheel();
@@ -754,27 +755,31 @@ $(function() {
 	    }
 	    var spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
 	    startAngle += (spinAngle * Math.PI / 180);
-	    drawRouletteWheel();
-	    spinTimeout = setTimeout('rotateWheel()', 30);
+
+		var ctx = canvas.getContext("2d");
+	    ctx.clearRect(0, 0, canvas.width, canvas.height);
+	    ctx.save();
+	    ctx.translate(canvas.width / 2, canvas.height / 2);
+
+	    var angle = startAngle + arc;
+	    ctx.rotate(angle);
+	    ctx.drawImage(image, -canvas.width / 2, -canvas.width / 2);
+	    ctx.restore();
+
+	    spinTimeout = setTimeout(function()
+	    	{
+	    		rotateWheel(canvas,image);
+	    	}, 30);
 	}
 
 	function stopRotateWheel() {
 	    clearTimeout(spinTimeout);
-	    var degrees = startAngle * 180 / Math.PI + 90;
-	    var arcd = arc * 180 / Math.PI;
-	    var index = Math.floor((360 - degrees % 360) / arcd);
-	    ctx.save();
-	    ctx.font = 'bold 30px Helvetica, Arial';
-	    var text = options[index]
-	    ctx.fillText(text, 250 - ctx.measureText(text).width / 2, 250 + 10);
-	    ctx.restore();
 	}
 
 	function easeOut(t, b, c, d) {
 	    var ts = (t /= d) * t;
 	    var tc = ts * t;
-	    return b + c * (tc + -3 * ts + 3 * t);
+    return b + c * (tc + -3 * ts + 3 * t);
 	}
 
 })
-

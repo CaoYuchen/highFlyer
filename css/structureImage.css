@@ -1,3 +1,19 @@
+#chapter3 > [data-value="page2"] .pinCanvas{
+	left: 350px;
+	top: 48px;
+}
+
+#chapter3 > [data-value="page3"] .pinCanvas{
+	left: 350px;
+	top: 25px;
+}
+
+#chapter3 > [data-value="page4"] .pinCanvas{
+	left: 350px;
+	top: 25px;
+}
+
+
 #chapter3 > [data-value="page7"] > .imageTitle:nth-child(1){
 	margin-top:-200px;
 }
