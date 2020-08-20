@@ -311,13 +311,13 @@ $(function() {
         	$('.foodAnimate').removeClass('shakeit');
     })
 
-    const correctSound = new Audio("./media/quiz/sound/correct.mp3");
-    const incorrectSound = new Audio("./media/quiz/sound/incorrect.mp3");
+    var correctSound = new Audio("./media/sound/correct.mp3");
+    var incorrectSound = new Audio("./media/sound/incorrect.mp3");
+    var wheelSound = new Audio("./media/sound/wheel.mp3");
 	$('.alpha').click(function(){
 		src = $(this).attr('src');
 		ans = $(this).attr('data-answer');
-		pauseVideo();
-
+		pauseAudio();
 		if(ans == "true" && src.includes('normal'))
 		{
 			src=src.replace('normal','correct');
@@ -331,20 +331,22 @@ $(function() {
 		$(this).attr('src',src);
 	})
 
-	function pauseVideo(){
+	function pauseAudio(){
 		correctSound.pause();
-		correctSound.src = correctSound.src;
+		correctSound.currentTime = 0;
 		incorrectSound.pause();
-		incorrectSound.src = incorrectSound.src;
+		incorrectSound.currentTime = 0;
+		wheelSound.pause();
+		wheelSound.currentTime = 0;
 	}
 
 	var resetPath = "slot/graybox.png";
 	$('.resetButton').click(function(){
-		$(this).siblings(".imageTitle").find(".dropBox").attr("alpha-value","empty");
+		$(this).siblings(".imageTitle, .structureDown").find(".dropBox").attr("alpha-value","empty");
 		$(this).siblings(".imageTitle").find(".dragBox").find("img").css("visibility","visible");
-		path = $(this).siblings(".imageTitle").find(".dropBox img").attr("src").replace(/answer.*/, resetPath);
+		path = $(this).siblings(".imageTitle, .structureDown").find(".dropBox img").attr("src").replace(/answer.*/, resetPath);
 		console.log(path);
-		$(this).siblings(".imageTitle").find(".dropBox img").attr("src", path);
+		$(this).siblings(".imageTitle, .structureDown").find(".dropBox img").attr("src", path);
 	})
 
 
@@ -490,7 +492,7 @@ $(function() {
 		return [pageNumber,indexStart];
 	}
 
-	function dragulaBW(dragBoxes, cardFlag=false){
+	function dragulaBW(dragBoxes, cardFlag=false, bwFlag=false){
 		drake = dragula(
 			dragBoxes,
 	    {
@@ -516,21 +518,33 @@ $(function() {
 	            var rightAnswer=target.getAttribute("alpha-value"), 
 	                currentAnswer=el.getAttribute("alpha-value");
 
+	            pauseAudio();
+
 	            if(rightAnswer == currentAnswer)
 	            {
 	                src = source.querySelector('[alpha-value="'+currentAnswer+'"]').src.replace("normal","answer");
 	            	target.querySelector(".dropBackground").src = src;
-	                // drake.containers = [];
+	            	correctSound.play();
 
 	                if(cardFlag)
 	                {
 	                	src = source.parentNode.querySelector('.cardDrop > [alpha-value="'+currentAnswer+'"').src.replace("normal","answer");
 	                	source.parentNode.querySelector('.cardDrop > [alpha-value="'+currentAnswer+'"').src = src;
 	                }
+
+	                if(bwFlag)
+	                {
+	                	if(target.parentNode.querySelector('.dropBox:nth-of-type(1) > .dropBackground').src.includes('answer') && target.parentNode.querySelector('.dropBox:nth-of-type(2) > .dropBackground').src.includes('answer'))
+	                	{
+	                		target.parentNode.parentNode.querySelector('.bwCorrect').style.display="block";
+	                		target.parentNode.parentNode.querySelector('.bwCorrect').classList.add('animated', 'bounceInDown', 'fast');
+	                	}
+	                }
 	            }
 	            else
 	            {
 	                source.querySelector('[alpha-value="'+currentAnswer+'"]').style.visibility="visible";
+	                incorrectSound.play();
 	            }       
 	        }
 
@@ -658,10 +672,10 @@ $(function() {
 	function updateDragulaBW(chapter,page){
 		left = dragulaBW([$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(0)")[0],
 			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(1)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(0)")[0]]);
+			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(0)")[0]],undefined,1);
 		right = dragulaBW([$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(2)")[0],
 									$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(3)")[0],
-									$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(1)")[0]]);
+									$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(1)")[0]],undefined,1);
 		return [left,right];
 	}
 
@@ -712,6 +726,8 @@ $(function() {
 		image = $(this).find(".pin > img")[0];
 		canvas = $(this).find(".pinCanvas")[0];
 		spin(canvas,image);
+		pauseAudio();
+		wheelSound.play();
 	})
 
 	var startAngle = 0;
@@ -744,7 +760,7 @@ $(function() {
 	function spin(canvas, image) {
 	    spinAngleStart = Math.random() * 10 + 10;
 	    spinTime = 0;
-	    spinTimeTotal = Math.random() * 3 + 4 * 1000;
+	    spinTimeTotal = Math.random() * 3 + 5 * 1010; //5.05s duration
 	    rotateWheel(canvas, image);
 	}
 
