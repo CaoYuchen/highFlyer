@@ -426,7 +426,7 @@ body {
 }
 
 
-@-webkit-keyframes shake {
+@-webkit-keyframes shakeit {
   0%  { -webkit-transform:     translate(2px, 1px) rotate(0deg); }
   10% { -webkit-transform:     translate(-1px, -2px) rotate(-2deg); }
   20% { -webkit-transform:     translate(-3px, 0px) rotate(3deg); }
@@ -441,7 +441,7 @@ body {
  }
 
  .shakeit{
-    -webkit-animation-name:              shake;    
+    -webkit-animation-name:              shakeit;    
     -webkit-animation-duration:          0.8s;
     -webkit-animation-iteration-count:   infinite;
     -webkit-animation-timing-function:   linear;
