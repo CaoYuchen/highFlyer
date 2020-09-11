@@ -39,7 +39,7 @@ body {
 
 #topButtonMenu{
     position: fixed;
-    top:133px;
+    top: 73px;
     left:50%;
     width:1600px;
     margin-left: -800px;
@@ -49,18 +49,18 @@ body {
 
 
 .topButton{
-	margin: 0px 51px;
+	margin: 0px 59px;
 }
 
-#leftButtonMenu{
-    top:231px;
+.leftButtonMenu{
+    top: 271px;
     position:fixed;
     left:0%;
     z-index: 1000;
 }
 
-#rightButtonMenu{
-    top:231px;
+.rightButtonMenu{
+    top: 271px;
     position:fixed;
     right:0%;
     text-align: right;
@@ -75,7 +75,7 @@ body {
 .roster{
 	padding:0px 35px;
 	position: absolute;
-	top: -105px;
+	top: -205px;
 }
 
 .pages{
@@ -95,7 +95,7 @@ body {
 	margin-top:-100px;
 	position: fixed;
 	font-family: EducationVAGRounded-Bold;
-	color: #943183;
+	color: #29b8ce;
 	font-size: 100px;
 	font-weight: bold;
 	text-align: center;
@@ -109,7 +109,18 @@ body {
 	margin-left:-960px;
 	position: fixed;
 	text-align: center;
-	display:;
+}
+
+.popup{
+	top:50%;
+	left:50%;
+	right:0;
+	width:1920px;
+	margin-left:-960px;
+	margin-top: -540px;
+	position: fixed;
+	text-align: center;
+	z-index:1000;
 }
 
 .structureTitle{
@@ -172,7 +183,7 @@ body {
 }
 
 .wheelButton{
-	margin: 0px 35px;
+	margin: 0px 42px;
 }
 
 .Hbutton, .Mbutton{
@@ -182,16 +193,23 @@ body {
 .foodNumber{
 	font-family: EducationVAGRounded-Bold;
 	color: black;
-	font-size: 20px;
+	font-size: 30px;
 	z-index: 50;
-	left: 50%;
+	/*margin-top: -60px;*/
+	margin: -60px 20px 0 20px;
+/*	left: 50%;
     top: 50%;
     right:0;
 	width:600px;
 	margin-left:-300px;
 	margin-top:-270px;
 	position: fixed;
-	text-align: center;
+	text-align: center;*/
+}
+
+.frontNumber{
+	font-size:40px;
+	font-weight: bold;
 }
 
 .foodImage{
@@ -230,6 +248,14 @@ body {
 	position: absolute;
 	top: -120px;
 	margin-left: 340px;
+}
+
+.quizCorrect{
+	display:none;
+	position: fixed;
+	text-align: center;
+	top:50%;
+	left:50%;
 }
 
 .dropBox{
@@ -290,7 +316,7 @@ body {
 	right:0;
 	width: 1600px;
 	margin-left: -800px;
-	margin-top:100px;
+	margin-top: 150px;
 	display: inline-block;
 	position: fixed;
 	text-align: center;
@@ -311,7 +337,7 @@ body {
 	right:0;
 	width:1200px;
 	margin-left:-600px;
-	margin-top:-250px;
+	margin-top: -220px;
 	position: fixed;
 	text-align: center;
 }
@@ -349,8 +375,8 @@ body {
 
 #rosterBack{
 	position: absolute;
-	left: 30px;
-	top:35px;
+	left: 50px;
+	top: 50px;
 }
 
 .penIcon{
@@ -374,16 +400,12 @@ body {
 	cursor: pointer;
 }
 
-#chapter2 .imageTitle > img, #chapter5 .imageTitle > img{
-	margin-top:-200px;
+#chapter2 .imageTitle > img{
+	 margin-top:-200px; 
 }
 
 #chapter1 .imageTitle > img {
 	margin-top: -500px;
-}
-
-#chapter4 .imageTitle > img{
-	margin-top: -350px;
 }
 
 #chapter3 .imageTitle > img{
@@ -395,34 +417,22 @@ body {
 	position: absolute;
 }
 
-
-/*chaptter 4 and chapter 5*/
-#chapter5 > [data-value="page6"] > .imageTitle > img{
-	margin-top:-220px;
-}
-#chapter5 > [data-value="page7"] > .imageTitle > img{
-	margin-top: -260px;
-}
-#chapter5 > [data-value="page8"] > .imageTitle > img{
-	margin-top:-220px;
+.phonics .imageTitle > img{
+	  margin-top: -300px;
 }
 
-#chapter5 > [data-value="page9"] > .imageTitle > img{
-	margin-top:-220px;
+#chapter2 .resetButton, .phonics .resetButton{
+	/* top:208px !important; */
 }
 
-#chapter4 > [data-value="page8"] > .imageTitle:nth-child(1){
-	margin-top:-200px;
-}
-#chapter4 > [data-value="page8"] > .imageTitle:nth-child(2){
-	margin-top: -78px;
-}
-#chapter4 > [data-value="page8"] > .imageTitle:nth-child(3){
-	margin-top: 150px;
+#chapter5 > [data-value="page14"] > .quizCorrect{
+	margin-top: 70px;
+	margin-left: 370px;
 }
 
-#chapter4 > [data-value="page8"] > .imageTitle img{
-	margin: 0 49px;
+#chapter5 > [data-value="page20"] > .quizCorrect{
+	margin-top: -30px;
+	margin-left: 560px;
 }
 
 

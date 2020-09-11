@@ -116,57 +116,65 @@
 
 
 
-#chapter7 > [data-value="page2"] > .foodImage:nth-child(2){
-	margin-top:-250px;
-	margin-left: 400px;
+#chapter6 > [data-value="page2"] > .foodImage:nth-child(2){
+	margin-top: -50px;
+	margin-left: 300px;
 }
-#chapter7 > [data-value="page2"] > .foodImage:nth-child(3){
-	margin-top:-250px;
-	margin-left: -350px;
+#chapter6 > [data-value="page2"] > .foodImage:nth-child(3){
+	margin-top: -300px;
+	margin-left: -150px;
 }
-#chapter7 > [data-value="page2"] > .foodImage:nth-child(4){
-	margin-top:-250px;
-	margin-left: 20px;
+#chapter6 > [data-value="page2"] > .foodImage:nth-child(4){
+	margin-top: -50px;
+	margin-left: -150px;
 }
-#chapter7 > [data-value="page2"] > .foodImage:nth-child(5){
-	margin-top:-250px;
-	margin-left: -750px;
+#chapter6 > [data-value="page2"] > .foodImage:nth-child(5){
+	margin-top: -50px;
+	margin-left: -600px;
+}
+#chapter6 > [data-value="page2"] > .foodImage:nth-child(6){
+	margin-top: -300px;
+	margin-left: 300px;
+}
+#chapter6 > [data-value="page2"] > .foodImage:nth-child(7){
+	margin-top: -300px;
+	margin-left: -600px;
 }
 
 
-#chapter7 > [data-value="page3"] > .foodImage:nth-child(2){
+#chapter6 > [data-value="page3"] > .foodImage:nth-child(2){
 	margin-top: -340px;
 	margin-left: -520px;
 }
-#chapter7 > [data-value="page3"] > .foodImage:nth-child(3){
+#chapter6 > [data-value="page3"] > .foodImage:nth-child(3){
 	margin-top:-100px;
 	margin-left: 450px;
 }
-#chapter7 > [data-value="page3"] > .foodImage:nth-child(4){
+#chapter6 > [data-value="page3"] > .foodImage:nth-child(4){
 	margin-top:-50px;
 	margin-left: -500px;
 }
-#chapter7 > [data-value="page3"] > .foodImage:nth-child(5){
+#chapter6 > [data-value="page3"] > .foodImage:nth-child(5){
 	margin-top:-50px;
 	margin-left:0px;
 }
-#chapter7 > [data-value="page3"] > .foodImage:nth-child(6){
+#chapter6 > [data-value="page3"] > .foodImage:nth-child(6){
 	margin-top: -200px;
 	margin-left: 200px;
 }
-#chapter7 > [data-value="page3"] > .foodImage:nth-child(7){
+#chapter6 > [data-value="page3"] > .foodImage:nth-child(7){
 	margin-top: -350px;
 	margin-left: 400px;
 }
-#chapter7 > [data-value="page3"] > .foodImage:nth-child(8){
+#chapter6 > [data-value="page3"] > .foodImage:nth-child(8){
 	margin-top: -330px;
 	margin-left:-50px;
 }
-#chapter7 > [data-value="page3"] > .foodImage:nth-child(9){
+#chapter6 > [data-value="page3"] > .foodImage:nth-child(9){
 	margin-top:-170px;
 	margin-left: -700px;
 }
-#chapter7 > [data-value="page3"] > .foodImage:nth-child(10){
+#chapter6 > [data-value="page3"] > .foodImage:nth-child(10){
 	margin-top: -200px;
 	margin-left: -250px;
 }

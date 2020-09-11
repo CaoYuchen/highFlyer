@@ -44,51 +44,57 @@ $(function() {
     		$('body').css('background-image', 'url("./media/Background/'+ backgrounds[2] +'")');
     	}
 
+		if(curNumber>2)
+		{
+			$('.next, .previous').hide();
+		}
+		else{
+			$('.next, .previous').show();
+		}
+
     	// update HF button
-		if(curNumber == 6 || curNumber == 5)
-		{
-			$('.Mbutton, .Hbutton').css("display","block");
-		}
-		else
-		{
-			$('.Mbutton, .Hbutton').hide();
-		}
+		$('.Mbutton, .Hbutton').hide();
 
     	// toggle content
     	$('.pages').removeClass("active");
     	$('#chapter'+curNumber).find("[data-value=page1]").addClass("active");
 
     	pauseVideo();
+    	$('.popup').show();
     })
 
 
 	// countPages
 	var pageNumber = [];
-	for (var i=0; i<9;i++)
+	for (var i=0; i<8;i++)
 	{
 		pages = $('#chapter' + i +' > .pages').not('.H, .M, .MH, .qM, .qH, .fM, .fH, .bwH, .bwM, .sM, .sH');
-		pageNumber = $.merge(pageNumber,countPages(pages, pages.length, i));
+		pageNumber = $.merge($.merge([],pageNumber),countPages(pages, pages.length, i));
 	}
 
 	var vocabularyChapter = 2;
-	var quizChapter = 6;
-	var finaleChapter = 7;
-	var buildwordsChapter = 5;
-	var phonicsChapter = 4;
+	var quizChapter = 5;
+	var finaleChapter = 6;
+	var buildwordsChapter = 4;
+	// var phonicsChapter = 4;
 	var structureChapter = 3;
 	var finalePage = 2;
 	var Mnumber = countPagesMH($('.M.pages').length, vocabularyChapter,'M');
 	var MHnumber = countPagesMH($('.MH.pages').length, vocabularyChapter,'MH');
 	var Hnumber = countPagesMH($('.H.pages').length, vocabularyChapter,'H');
+	var quizL = countPagesMH($('.qL.pages').length, quizChapter,'qL');
 	var quizM = countPagesMH($('.qM.pages').length, quizChapter,'qM');
 	var quizH = countPagesMH($('.qH.pages').length, quizChapter,'qH');
+	var bwL = countPagesMH($('.bwL.pages').length, buildwordsChapter,'bwL');
 	var bwM = countPagesMH($('.bwM.pages').length, buildwordsChapter,'bwM');
 	var bwH = countPagesMH($('.bwH.pages').length, buildwordsChapter,'bwH');
+	var finaleL = countPagesMH($('.fL.pages').length, finaleChapter,'fL');
 	var finaleM = countPagesMH($('.fM.pages').length, finaleChapter,'fM');
 	var finaleH = countPagesMH($('.fH.pages').length, finaleChapter,'fH');
 	var sL = countPagesMH($('.sL.pages').length, structureChapter,'sL');
 	var sM = countPagesMH($('.sM.pages').length, structureChapter,'sM');
 	var sH = countPagesMH($('.sH.pages').length, structureChapter,'sH');
+	var phonics = countPagesMH($('.phonics.pages').length, buildwordsChapter,'phonics');
 	
 	// SideButton
 	var number = pageNumber.length;
@@ -107,18 +113,14 @@ $(function() {
 		$('.Hbutton, .Mbutton').hide();
 		if(pageNumber[index][1]>1)
 		{
-			$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
 			if(pageNumber[index] == pageNumber[pageNumber.length-1])
 			{
 				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[4] +'")');
 				$('.next, .topButton, .roster').css("visibility", "hidden");
 			}
-			else if(pageNumber[index] == pageNumber[pageNumber.length-2])
-			{
-				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[5] +'")');
-			}
 			else
 			{
+				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
 				upadateMHbutton(pageNumber,index, Hflag);
 			}
 		}
@@ -134,23 +136,17 @@ $(function() {
 		else
 		{
 			$('body').css('background-image', 'url("./media/Background/'+ backgrounds[2] +'")');
+			if(pageNumber[index] == pageNumber[pageNumber.length-2])
+			{
+				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[5] +'")');
+			}
 
-			// update quizSelection
-			if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "quizSelection")
+			if(pageNumber[index][0]>2 && pageNumber[index][1] == 1)
 			{
-				upadateMHbutton(pageNumber,index, false);
+				$('.next, .previous').hide();
 			}
-			else if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "bwSelection")
-			{
-				upadateMHbutton(pageNumber,index, false);
-			}
-			else if(wheel3Flag && pageNumber[index][0] == phonicsChapter && pageNumber[index][1] == 1)
-			{
-				index = updateIndex(type,pageNumber,index);
-				if(type.includes("previous"))
-				{
-					$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
-				}
+			else{
+				$('.next, .previous').show();
 			}
 		}
 
@@ -159,23 +155,26 @@ $(function() {
 		$('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").addClass("active");
 
 		// change button icon
-		curButton = "topButton"+pageNumber[index][0];
-    	$("#"+preButton).find('img').attr('src',buttonPath);
-    	buttonSrc = $("#"+curButton).find('img').attr('src').replace("gray","white");
-    	$("#"+curButton).find('img').attr('src',buttonSrc);
+		curButton = "topButton"+pageNumber[index][0];		
+    	if(!curButton.includes(0) && !curButton.includes(8))
+    	{
+    		$("#"+preButton).find('img').attr('src',buttonPath);
+    		buttonSrc = $("#"+curButton).find('img').attr('src').replace("gray","white");
+    		$("#"+curButton).find('img').attr('src',buttonSrc);
 
-    	preNumber = Number(preButton.match(/\d+/)[0]);
-    	preButton = $("#"+curButton).attr('id');
-    	curNumber = Number(preButton.match(/\d+/)[0]);
-    	
-    	buttonPath = buttonPath.replace(preNumber,curNumber);
+    		preNumber = Number(preButton.match(/\d+/)[0]);
+	    	preButton = $("#"+curButton).attr('id');
+	    	curNumber = Number(preButton.match(/\d+/)[0]);
+	    	
+	    	buttonPath = buttonPath.replace(preNumber,curNumber);
+    	}
 
     	pauseVideo();
+    	$('.popup').show();
 
 	})
 
 	var Hflag = false;
-	var wheel3Flag = false;
 	var foodFlag = "M";
 	var curChapter;
 	$('.Hbutton, .Mbutton, .wheelButton').click(function(e){
@@ -195,22 +194,6 @@ $(function() {
 				foodFlag = "H";
 				Hflag = true;
 			}
-			else if(curPage == "quizSelection")
-			{
-				finaleStart = getIndexOf(pageNumber,[quizChapter+1,Number($('.fM.pages').eq(0).attr('data-value').match(/\d+/)[0])-2]);
-				finaleEnd = getIndexOf(pageNumber,[quizChapter+1,Number($('.fH.pages').last().attr('data-value').match(/\d+/)[0])+1]);
-				[pageNumber,] = updatePageIndex(pageNumber,finaleStart,finaleEnd,finaleH);
-
-				newNumber = quizH;
-				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
-				curChapter = quizChapter;
-			}
-			else if(curPage == "bwSelection")
-			{
-				newNumber = bwH;
-				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
-				curChapter = buildwordsChapter;
-			}
 		}
 		else if($(this).attr('class').includes('Mbutton'))
 		{
@@ -220,53 +203,82 @@ $(function() {
 				foodFlag = "M";
 				Hflag = false;
 			}
-			else if (curPage == "quizSelection")
-			{
-				finaleStart = getIndexOf(pageNumber,[quizChapter+1,Number($('.fM.pages').eq(0).attr('data-value').match(/\d+/)[0])-2]);
-				finaleEnd = getIndexOf(pageNumber,[quizChapter+1,Number($('.fH.pages').last().attr('data-value').match(/\d+/)[0])+1]);
-				[pageNumber,] = updatePageIndex(pageNumber,finaleStart,finaleEnd,finaleM);
-
-				newNumber = quizM;
-				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
-				curChapter = quizChapter;
-			}
-			else if (curPage == "bwSelection")
-			{
-				newNumber = bwM;
-				$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
-				curChapter = buildwordsChapter;
-			}
 		}
 		else if($(this).attr('class').includes('wheelButton'))
 		{
-			curButton = $(this).attr('id');
-			if(curButton == "wheelButtonLow")
+			curButton = $(this).attr('class');
+			if(curPage == "structureSelection")
 			{
-				newNumber = sL;
-				$("#topButton4").attr("disabled",false);
+				if(curButton.includes("wheelButtonLow"))
+				{
+					newNumber = sL;
+					spinPiece = 6;
+				}
+				else if(curButton.includes("wheelButtonMid"))
+				{
+					newNumber = sM;
+					spinPiece = 9;
+				}
+				else if(curButton.includes("wheelButtonHigh"))
+				{
+					newNumber = sH;
+					spinPiece = 12;
+				}
+				curChapter = structureChapter;
 			}
-			else if(curButton == "wheelButtonMid")
+			else if(curPage == "bwSelection")
 			{
-				newNumber = sM;
-				$("#topButton4").attr("disabled",false);
+				if(curButton.includes("wheelButtonLow"))
+				{
+					newNumber = $.merge($.merge([],phonics),bwL);
+				}
+				else if(curButton.includes("wheelButtonMid"))
+				{
+					newNumber = $.merge($.merge([],phonics),bwM);
+				}
+				else if(curButton.includes("wheelButtonHigh"))
+				{
+					newNumber = bwH;
+				}
+				curChapter = buildwordsChapter;
+				console.log(phonics,bwL);
 			}
-			else if(curButton == "wheelButtonHigh")
+			else if(curPage == "quizSelection")
 			{
-				newNumber = sH;
-				finaleStart = getIndexOf(pageNumber,[structureChapter+1,1]);
-				finaleEnd = getIndexOf(pageNumber,[structureChapter+2,1]);
-				[pageNumber,] = updatePageIndex(pageNumber,finaleStart,finaleEnd,[]);
+				if(curButton.includes("wheelButtonLow"))
+				{
+					newNumber = quizL;
+				}
+				else if(curButton.includes("wheelButtonMid"))
+				{
+					newNumber = quizM;
+				}
+				else if(curButton.includes("wheelButtonHigh"))
+				{
+					newNumber = quizH;
+				}
+				curChapter = quizChapter;
+			}
+			else if(curPage == "finaleSelection")
+			{
+				if(curButton.includes("wheelButtonLow"))
+				{
+					newNumber = finaleL;
+				}
+				else if(curButton.includes("wheelButtonMid"))
+				{
+					newNumber = finaleM;
+				}
+				else if(curButton.includes("wheelButtonHigh"))
+				{
+					newNumber = finaleH;
+				}
+				curChapter = finaleChapter;
+			}
 
-				$("#topButton4").attr("disabled",true);
-				wheel3Flag = true;
-			}
 			$('body').css('background-image', 'url("./media/Background/'+ backgrounds[3] +'")');
-			curChapter = structureChapter;
-		}
-
-		if($(this).attr('id') != "wheelButtonHigh")
-		{
-			wheel3Flag = false;
+			$('.popup').show();
+			
 		}
 
 		// update page index
@@ -277,17 +289,14 @@ $(function() {
 
 		$('.pages').removeClass("active");
 		$('#chapter'+pageNumber[indexStart][0]).find("[data-value=page"+pageNumber[indexStart][1]+"]").addClass("active");
-
 		
 		if(curPage.includes("MHselection") || curPage.includes("Hselection"))
 		{
 			updateFoodNumber(newNumber,foodFlag,pageNumber);
 			upadateMHbutton(pageNumber,indexStart,Hflag);
 		}
-		else if(curPage.includes("quizSelection") || curPage.includes("bwSelection") || curPage.includes("wheelButton"))
-		{
-			upadateMHbutton(pageNumber,indexStart,false);
-		}
+
+		$('.next, .previous').show();
 	})
 
 	//roster 
@@ -303,6 +312,10 @@ $(function() {
 	$('.foodAnimate').click(function(){
 		$('.foodAnimate').removeClass('shakeit');
 		$(this).addClass('shakeit');
+	})
+
+	$('.popup').click(function(){
+		$(this).hide();
 	})
 
 	// action when click outside target
@@ -340,13 +353,68 @@ $(function() {
 		wheelSound.currentTime = 0;
 	}
 
-	var resetPath = "slot/graybox.png";
+	var resetFood = "slot/graybox.png";
+	var resetCard = "slot/transbox.png";
+	var resetBW = ["slot/bluebox.png","slot/orangebox.png"];
 	$('.resetButton').click(function(){
-		$(this).siblings(".imageTitle, .structureDown").find(".dropBox").attr("alpha-value","empty");
-		$(this).siblings(".imageTitle").find(".dragBox").find("img").css("visibility","visible");
-		path = $(this).siblings(".imageTitle, .structureDown").find(".dropBox img").attr("src").replace(/answer.*/, resetPath);
-		console.log(path);
-		$(this).siblings(".imageTitle, .structureDown").find(".dropBox img").attr("src", path);
+		curClass = $(this).attr("class");
+		if(curClass.includes("Bfood"))
+		{
+			$(this).siblings(".imageTitle, .structureDown").find(".dropBox").attr("alpha-value","empty");
+			$(this).siblings(".imageTitle").find(".dragBox").find("img").css("visibility","visible");
+			path = $(this).siblings(".imageTitle, .structureDown").find(".dropBox img").attr("src").replace(/answer.*/, resetFood);
+			$(this).siblings(".imageTitle, .structureDown").find(".dropBox img").attr("src", path);
+		}
+		else if(curClass.includes("Bbw"))
+		{
+			path = $(this).siblings(".buildWordsTitle").find(".dropBox").eq(0).find("img").attr("src").replace(/answer.*/,resetBW[0]);
+			$(this).siblings(".buildWordsTitle").find(".dropBox").eq(0).find("img").attr("src",path);
+			path = $(this).siblings(".buildWordsTitle").find(".dropBox").eq(2).find("img").attr("src").replace(/answer.*/,resetBW[0]);
+			$(this).siblings(".buildWordsTitle").find(".dropBox").eq(2).find("img").attr("src",path);
+			path = $(this).siblings(".buildWordsTitle").find(".dropBox").eq(1).find("img").attr("src").replace(/answer.*/,resetBW[1]);
+			$(this).siblings(".buildWordsTitle").find(".dropBox").eq(1).find("img").attr("src",path);
+			path = $(this).siblings(".buildWordsTitle").find(".dropBox").eq(3).find("img").attr("src").replace(/answer.*/,resetBW[1]);
+			$(this).siblings(".buildWordsTitle").find(".dropBox").eq(3).find("img").attr("src",path);
+
+			$(this).siblings(".buildWordsTitle").find(".dragBox img").css("visibility","visible");
+
+			$(this).siblings(".buildWordsTitle").find(".bwCorrect").hide();
+			$(this).siblings(".buildWordsTitle").find(".bwCorrect").removeClass("animated bounceInDown fast");
+		}
+		else if(curClass.includes("Bquiz"))
+		{
+			for(i=0;i<$(this).siblings(".quizImage, .alphaBox").find("[data-answer='false']").length;i++)
+			{
+				path = $(this).siblings(".quizImage, .alphaBox").find("[data-answer='false']").eq(i).attr("src").replace("incorrect","normal");
+				$(this).siblings(".quizImage, .alphaBox").find("[data-answer='false']").eq(i).attr("src",path);
+			}
+			path = $(this).siblings(".quizImage, .alphaBox").find("[data-answer='true']").attr("src").replace("correct","normal");
+			$(this).siblings(".quizImage, .alphaBox").find("[data-answer='true']").attr("src",path);
+		}
+		else if(curClass.includes("Bvoc"))
+		{
+			$(this).siblings(".foodText").hide();
+		}
+		else if(curClass.includes("Bcard"))
+		{
+			path = $(this).siblings(".imageTitle").find(".dropBox img").attr("src").replace(/answer.*/,resetCard);
+			$(this).siblings(".imageTitle").find(".dropBox img").attr("src",path);
+			for(i=0;i<$(this).siblings(".cardDrop").find("img").length;i++)
+			{
+				path = $(this).siblings(".cardDrop").find("img").eq(i).attr("src").replace("answer","normal");
+				$(this).siblings(".cardDrop").find("img").eq(i).attr("src",path);
+			}			
+			$(this).siblings(".dragBox").find("img").css("visibility","visible");
+		}
+		else if(curClass.includes("Bqc"))
+		{
+			path = $(this).siblings(".quizImage").find(".dropBox img").attr("src").replace(/answer.*/, resetFood);
+			$(this).siblings(".quizImage").find(".dropBox img").attr("src", path);
+			$(this).siblings(".dragBox").find("img").css("visibility","visible");
+
+			$(this).siblings(".quizCorrect").hide();
+			$(this).siblings(".quizCorrect").removeClass("animated bounceInDown fast");
+		}
 	})
 
 
@@ -369,10 +437,10 @@ $(function() {
 		dragulaQuiz[i] = updateDragulaQuiz(quizChapter,QuizpageNumber);	
 	}
 
-	for(i=0;i<$("#chapter"+ phonicsChapter +" .dragBox").length;i++)
+	for(i=0;i<$("#chapter"+ buildwordsChapter +" .phonics .dragBox").length;i++)
 	{
-		PhonicspageNumber = Number($("#chapter"+ phonicsChapter +" .dragBox").eq(i).parent().attr("data-value").match(/\d+/)[0]);
-		dragulaPhonics[i] = updateDragulaPhonics(phonicsChapter,PhonicspageNumber);
+		PhonicspageNumber = Number($("#chapter"+ buildwordsChapter +" .phonics .dragBox").eq(i).parent().attr("data-value").match(/\d+/)[0]);
+		dragulaPhonics[i] = updateDragulaPhonics(buildwordsChapter,PhonicspageNumber);
 	}
 	// strcuture
 	for(i=0;i<$("#chapter"+ structureChapter +" .imageTitle.dragBox").length;i++)
@@ -453,9 +521,10 @@ $(function() {
 	function upadateMHbutton(pageNumber, index, Hflag=false){
 		// Hbutton and Mbutton
 		$('.Mbutton, .Hbutton').hide();
-		if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "MHselection"
-			|| $('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "quizSelection"
-			|| $('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "bwSelection")
+		// if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "MHselection"
+		// 	|| $('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "quizSelection"
+		// 	|| $('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "bwSelection")
+		if($('#chapter'+pageNumber[index][0]).find("[data-value=page"+pageNumber[index][1]+"]").attr('id') == "MHselection")
 		{
 			$('.Mbutton, .Hbutton').css("display","block");
 		}
@@ -468,7 +537,7 @@ $(function() {
 
 	function updateFoodNumber(newNumber,flag,pageNumber){
 		//update food number
-		sumNumber = $(".pages."+flag).find(".foodNumber").length;
+		sumNumber = $(".pages."+flag).find(".foodNumber").length / 2;
 		$(".pages."+flag).find(".backNumber").text(sumNumber);
 		for(var i=0; i<newNumber.length; i++)
 		{
@@ -492,7 +561,7 @@ $(function() {
 		return [pageNumber,indexStart];
 	}
 
-	function dragulaBW(dragBoxes, cardFlag=false, bwFlag=false){
+	function dragulaBW(dragBoxes, cardFlag=false, bwFlag=false, quizFlag=false){
 		drake = dragula(
 			dragBoxes,
 	    {
@@ -538,6 +607,15 @@ $(function() {
 	                	{
 	                		target.parentNode.parentNode.querySelector('.bwCorrect').style.display="block";
 	                		target.parentNode.parentNode.querySelector('.bwCorrect').classList.add('animated', 'bounceInDown', 'fast');
+	                	}
+	                }
+	                if(quizFlag)
+	                {
+	                	if(target.parentNode.querySelector('.dropBox > .dropBackground').src.includes('answer'))
+	                	{
+	                		console.log("1");
+	                		target.parentNode.parentNode.querySelector('.quizCorrect').style.display="block";
+	                		target.parentNode.parentNode.querySelector('.quizCorrect').classList.add('animated', 'bounceInDown', 'fast');
 	                	}
 	                }
 	            }
@@ -681,7 +759,7 @@ $(function() {
 
 	function updateDragulaQuiz(chapter,page){
 		quiz = dragulaBW([$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dropBox:eq(0)")[0],
-			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(0)")[0]]);
+			$('#chapter'+chapter).find("[data-value=page"+page+"]").find(".dragBox:eq(0)")[0]],undefined,undefined,1);
 		return quiz;
 	}
 
@@ -731,12 +809,14 @@ $(function() {
 	})
 
 	var startAngle = 0;
-	var arc = Math.PI / (18 / 2);
+	var spinPiece = 6;
+	var arc = Math.PI / (spinPiece / 2);
 	var spinTimeout = null;
-	var spinArcStart = 10;
 	var spinTime = 0;
 	var spinTimeTotal = 0;
 	var canvas, image;
+	var previousPiece = 1;
+	
 
 	for(i=0; i<$('.pinCanvas').length; i++)
 	{
@@ -758,9 +838,26 @@ $(function() {
 	}
 
 	function spin(canvas, image) {
-	    spinAngleStart = Math.random() * 10 + 10;
+	    do
+	    {
+	    	spinAngleStart = Math.random() * 10 + 10;
+	    	spinTimeTotal = Math.random() * 3 + 5 * 1010; //5.05s duration
+
+	    	for(spinTime=0;spinTime<spinTimeTotal;spinTime+=30)
+	    	{
+	    		spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
+	    		startAngle += (spinAngle * Math.PI / 180);
+	    		angle = startAngle + arc;
+	    	}
+	    	restPiece = (angle%(Math.PI * 2)) / (Math.PI * 2) * spinPiece;
+	    	diff = Math.abs(previousPiece - restPiece - Math.PI/(spinPiece*2));
+
+	    } while(diff <= 0.5);
+
 	    spinTime = 0;
-	    spinTimeTotal = Math.random() * 3 + 5 * 1010; //5.05s duration
+	    startAngle = 0;
+	    previousPiece = Math.round(restPiece);
+
 	    rotateWheel(canvas, image);
 	}
 

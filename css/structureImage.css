@@ -14,13 +14,13 @@
 }
 
 
-#chapter3 > [data-value="page7"] > .imageTitle:nth-child(1){
+#chapter3 > [data-value="page7"] > .imageTitle:nth-child(2){
 	margin-top: -320px;
 }
-#chapter3 > [data-value="page7"] > .imageTitle:nth-child(2){
+#chapter3 > [data-value="page7"] > .imageTitle:nth-child(3){
 	margin-top: -155px;
 }
-#chapter3 > [data-value="page7"] > .imageTitle:nth-child(3){
+#chapter3 > [data-value="page7"] > .imageTitle:nth-child(4){
 	margin-top: 60px;
 }
 

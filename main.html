@@ -20,6 +20,7 @@
     <!-- css for different pages -->
     <link type="text/css" href="./css/foodImage.css" rel='stylesheet'>
     <link type="text/css" href="./css/quizImage.css" rel='stylesheet'>
+    <link type="text/css" href="./css/phonicsImage.css" rel='stylesheet'>
     <link type="text/css" href="./css/structureImage.css" rel='stylesheet'>
     <!-- popup -->
     <link type="text/css" href="./css/popup.css" rel='stylesheet'>
@@ -40,10 +41,10 @@
         <button id="topButton4" class="topButton"><img src="./media/buttons/Sections/section4_gray.png" height="50px"></button>
         <button id="topButton5" class="topButton"><img src="./media/buttons/Sections/section5_gray.png" height="50px"></button>
         <button id="topButton6" class="topButton"><img src="./media/buttons/Sections/section6_gray.png" height="50px"></button>
-        <button id="topButton7" class="topButton"><img src="./media/buttons/Sections/section7_gray.png" height="50px"></button>
+        <!-- <button id="topButton7" class="topButton"><img src="./media/buttons/Sections/section7_gray.png" height="50px"></button> -->
     </div>
 
-    <div id="rightButtonMenu">
+    <div class="rightButtonMenu">
         <!-- Roster -->
         <button class='roster sideButton' style="right:0%"><img src='./media/buttons/Roster.png' width='48px'></button>
         <!-- Next -->
@@ -56,7 +57,7 @@
         <button class="sideButton Hbutton"><img src="./media/buttons/BackForward/Right_h.png" width="92px"></button>
     </div>
 
-    <div id="leftButtonMenu">
+    <div class="leftButtonMenu">
         <!-- Roster -->
         <button class='roster sideButton'><img src='./media/buttons/Roster.png' width='48px'></button>
         <!-- Next -->
@@ -84,35 +85,72 @@
         </div>
         <div id="chapter2">
             <div class="pages" data-value="page1">
-                <div class="pageTitle"><p>Vocabulary</p></div>
+                <div class="pageTitle"><p>Vocabulary</p>
+            </div>
             </div>
             <div class="pages" data-value="page2">
-                <div class="foodNumber"><span class="frontNumber">1</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                <div class="resetButton Bvoc"><img src="./media/buttons/reset.png" width="45px"></div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">1</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">1</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Burger.png' width='944px'></div>
                 <div class="foodText"><p>burger</p></div>
             </div>
             <div class="pages" data-value="page3">
-                <div class="foodNumber"><span class="frontNumber">2</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                <div class="resetButton Bvoc"><img src="./media/buttons/reset.png" width="45px"></div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">2</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">2</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Milkshake.png' width='944px'></div>
                 <div class="foodText"><p>milkshake</p></div>
             </div>
             <div class="pages" data-value="page4">
-                <div class="foodNumber"><span class="frontNumber">3</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                <div class="resetButton Bvoc"><img src="./media/buttons/reset.png" width="45px"></div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">3</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">3</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Pizza.png' width='944px'></div>
                 <div class="foodText"><p>pizza</p></div>
             </div>
             <div class="pages" data-value="page5">
-                <div class="foodNumber"><span class="frontNumber">4</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                <div class="resetButton Bvoc"><img src="./media/buttons/reset.png" width="45px"></div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">4</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">4</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Rice.png' width='944px'></div>
                 <div class="foodText"><p>rice</p></div>
             </div>
             <div class="pages" data-value="page6">
-                <div class="foodNumber"><span class="frontNumber">5</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                <div class="resetButton Bvoc"><img src="./media/buttons/reset.png" width="45px"></div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">5</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">5</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Salad.png' width='944px'></div>
                 <div class="foodText"><p>salad</p></div>
             </div>
             <div class="pages" data-value="page7" id="MHselection">
-                <div class="foodNumber"><span class="frontNumber">6</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                <div class="resetButton Bvoc"><img src="./media/buttons/reset.png" width="45px"></div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">6</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">6</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Water.png' width='944px'></div>
                 <div class="foodText"><p>water</p></div>
             </div>
@@ -132,32 +170,68 @@
                 <div class="foodImage"><img class="foodAnimate" src='./media/food/food_white/Water.png' width='350px'></div>
             </div>
             <div class="pages M H" data-value="page10" data-M="page1" data-H="page4">
-                <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                <div class="resetButton Bvoc"><img src="./media/buttons/reset.png" width="45px"></div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">3</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">3</span></div>
+                </div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Curry.png' width='944px'></div>
                 <div class="foodText"><p>curry</p></div>
             </div>
             <div class="pages M H" data-value="page11" data-M="page2" data-H="page5">
-                <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                <div class="resetButton Bvoc"><img src="./media/buttons/reset.png" width="45px"></div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">3</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">3</span></div>
+                </div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Fries.png' width='944px'></div>
                 <div class="foodText"><p>fries</p></div>
             </div>
             <div class="pages M H" data-value="page12" data-M="page3" data-H="page6" id="Hselection">
-                <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                <div class="resetButton Bvoc"><img src="./media/buttons/reset.png" width="45px"></div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">3</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">3</span></div>
+                </div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Spaghetti.png' width='944px'></div>
                 <div class="foodText"><p>spaghetti</p></div>
             </div>
             <div class="pages MH H" data-value="page13" data-MH="page1" data-H="page1">
-                <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                <div class="resetButton Bvoc"><img src="./media/buttons/reset.png" width="45px"></div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">3</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">3</span></div>
+                </div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Chicken.png' width='944px'></div>
                 <div class="foodText"><p>chicken</p></div>
             </div>
             <div class="pages MH H" data-value="page14" data-MH="page2" data-H="page2">
-                <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                <div class="resetButton Bvoc"><img src="./media/buttons/reset.png" width="45px"></div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">3</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">3</span></div>
+                </div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Coconut.png' width='944px'></div>
-                <div class="foodText"><p>coconut Milk</p></div>
+                <div class="foodText"><p>coconut milk</p></div>
             </div>
             <div class="pages MH H" data-value="page15" data-MH="page3" data-H="page3">
-                <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                <div class="resetButton Bvoc"><img src="./media/buttons/reset.png" width="45px"></div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">3</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber"></span>&nbsp;/&nbsp;<span class="backNumber">3</span></div>
+                </div>
                 <div class="imageTitle"><img src='./media/food/flashcards_white/Sandwich.png' width='944px'></div>
                 <div class="foodText"><p>sandwich</p></div>
             </div>
@@ -196,11 +270,11 @@
         </div>
         <div id="chapter3">
             <div class="pages" data-value="page1" id="structureSelection">
-                <div class="pageTitle"><p>Structures</p></div>
+                <div class="pageTitle"><p>Grammar</p></div>
                 <div class="pageTitle" style="margin-top: 50px">
-                    <button id="wheelButtonLow" class="wheelButton"><img src="./media/buttons/wheel_6.png" height="70px"></button>
-                    <button id="wheelButtonMid" class="wheelButton"><img src="./media/buttons/wheel_9.png" height="70px"></button>
-                    <button id="wheelButtonHigh" class="wheelButton"><img src="./media/buttons/wheel_12.png" height="70px"></button>
+                    <button class="wheelButtonLow wheelButton"><img src="./media/buttons/lowbutton.png" height="70px"></button>
+                    <button class="wheelButtonMid wheelButton"><img src="./media/buttons/midbutton.png" height="70px"></button>
+                    <button class="wheelButtonHigh wheelButton"><img src="./media/buttons/highbutton.png" height="70px"></button>
                 </div>
             </div>
             <div class="pages sL" data-value="page2" data-sL="page1">
@@ -210,6 +284,7 @@
                     <div class="imageTitle pin"><img src='./media/Wheel/wheel_pin/low.svg' width='705px' height="705px"></div>
                     <div class="imageTitle"><canvas class="pinCanvas" width="705px" height="705px"></canvas></div>
                 </div>
+                <div class="popup"><img src='./media/structure/popup/wheelpopup.png'></div>
             </div>
             <div class="pages sM" data-value="page3" data-sM="page1">
                 <div class="wheel">
@@ -218,6 +293,7 @@
                     <div class="imageTitle pin"><img src='./media/Wheel/wheel_pin/mid.svg' width='705px' height="705px"></div>
                     <div class="imageTitle"><canvas class="pinCanvas" width="705px" height="705px"></canvas></div>
                 </div>
+                <div class="popup"><img src='./media/structure/popup/wheelpopup.png'></div>
             </div>
             <div class="pages sH" data-value="page4" data-sH="page1">
                 <div class="wheel">
@@ -226,9 +302,10 @@
                     <div class="imageTitle pin"><img src='./media/Wheel/wheel_pin/high.svg' width='705px' height="705px"></div>
                     <div class="imageTitle"><canvas class="pinCanvas" width="705px" height="705px"></canvas></div>
                 </div>
+                <div class="popup"><img src='./media/structure/popup/wheelpopup.png'></div>
             </div>
             <div class="pages sL" data-value="page5" data-sL="page2">
-                <div class="resetButton"><img src="./media/buttons/reset.png" width="45px"></div>
+                <div class="resetButton Bfood"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="imageTitle sFood">
                     <div class="structureBox">
                         <div class="structureMid dragBox">
@@ -250,9 +327,10 @@
                     </div>
                 </div>
                 <div class="structureTitle"><img src='./media/Background/Structures.png' width='1920px'></div>
+                <div class="popup"><img src='./media/structure/popup/likepopup.png'></div>
             </div>
             <div class="pages sM" data-value="page6" data-sM="page2">
-                <div class="resetButton"><img src="./media/buttons/reset.png" width="45px"></div>
+                <div class="resetButton Bfood"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="imageTitle sFood">
                     <div class="structureBox">
                         <div class="structureMid dragBox">
@@ -277,8 +355,10 @@
                     </div>
                 </div>
                 <div class="structureTitle"><img src='./media/Background/Structures.png' width='1920px'></div>
+                <div class="popup"><img src='./media/structure/popup/likepopup.png'></div>
             </div>
             <div class="pages sM" data-value="page7" data-sM="page3">
+                <div class="resetButton Bcard"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="imageTitle cardDrop">
                     <img alpha-value="salty" src='./media/structure/structure_mid_image/normal/salty.png' width='306px'>
                     <img alpha-value="sour" src='./media/structure/structure_mid_image/normal/sour.png' width='306px'>
@@ -298,9 +378,10 @@
                     <img alpha-value="sour" src="./media/structure/structure_mid_text/normal/sour.png" width="306px">
                 </div>
                 <div class="structureTitle"><img src='./media/Background/Structures_mid.png' width='1920px'></div>
+                <div class="popup"><img src='./media/structure/popup/tastepopup.png'></div>
             </div>
             <div class="pages sH" data-value="page8" data-sH="page2">
-                <div class="resetButton"><img src="./media/buttons/reset.png" width="45px"></div>
+                <div class="resetButton Bfood"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="imageTitle sFood">
                     <div class="structureBox">
                         <div class="structureMid dragBox">
@@ -328,9 +409,10 @@
                     </div>
                 </div>
                 <div class="structureTitle"><img src='./media/Background/Structures.png' width='1920px'></div>
+                <div class="popup"><img src='./media/structure/popup/likepopup.png'></div>
             </div>
             <div class="pages sH" data-value="page9" data-sH="page3">
-                <div class="resetButton"><img src="./media/buttons/reset.png" width="45px"></div>
+                <div class="resetButton Bfood"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="imageTitle sFoodPrice">
                     <div class="structureBox">
                         <div class="foodPriceLeft dragBox">
@@ -351,61 +433,111 @@
                     </div>
                 </div>
                 <div class="structureTitle"><img src='./media/Background/Structures_high.png' width='1920px'></div>
+                <div class="popup"><img src='./media/structure/popup/pricepopup.png'></div>
             </div>
         </div>
         <div id="chapter4">
-            <div class="pages" data-value="page1">
-                <div class="pageTitle"><p>Phonics</p></div>
+            <!-- phonics -->
+            <div class="pages" data-value="page1" id="bwSelection">
+                <div class="pageTitle"><p>Phonics and Reading</p></div>
+                <div class="pageTitle" style="margin-top: 50px">
+                    <button class="wheelButtonLow wheelButton"><img src="./media/buttons/lowbutton.png" height="70px"></button>
+                    <button class="wheelButtonMid wheelButton"><img src="./media/buttons/midbutton.png" height="70px"></button>
+                    <button class="wheelButtonHigh wheelButton"><img src="./media/buttons/highbutton.png" height="70px"></button>
+                </div>
             </div>
-            <div class="pages" data-value="page2">
+            <div class="pages phonics" data-value="page2" data-phonics="page1">
+                <div class="resetButton Bquiz"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="imageTitle"><img src='./media/food/food_white/Burger.png' width='450px'></div>
                 <div class="alphaBox">
                     <img class="alpha" data-answer="false" src='./media/phonicCards/normal/s.png' width='220px'>
                     <img class="alpha" data-answer="false" src='./media/phonicCards/normal/f.png' width='220px'>
                     <img class="alpha" data-answer="true" src='./media/phonicCards/normal/b.png' width='220px'>
                 </div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">1</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">1</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
             </div>
-            <div class="pages" data-value="page3">
+            <div class="pages phonics" data-value="page3" data-phonics="page2">
+                <div class="resetButton Bquiz"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="imageTitle"><img src='./media/food/food_white/Milkshake.png' width='450px'></div>
                 <div class="alphaBox">
                     <img class="alpha" data-answer="true" src='./media/phonicCards/normal/m.png' width='220px'>
                     <img class="alpha" data-answer="false" src='./media/phonicCards/normal/p.png' width='220px'>
                     <img class="alpha" data-answer="false" src='./media/phonicCards/normal/b.png' width='220px'>
                 </div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">2</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">2</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
             </div>
-            <div class="pages" data-value="page4">
+            <div class="pages phonics" data-value="page4" data-phonics="page3">
+                <div class="resetButton Bquiz"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="imageTitle"><img src='./media/food/food_white/Pizza.png' width='450px'></div>
                 <div class="alphaBox">
                     <img class="alpha" data-answer="false" src='./media/phonicCards/normal/s.png' width='220px'>
                     <img class="alpha" data-answer="true" src='./media/phonicCards/normal/p.png' width='220px'>
                     <img class="alpha" data-answer="false" src='./media/phonicCards/normal/b.png' width='220px'>
                 </div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">3</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">3</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
             </div>
-            <div class="pages" data-value="page5">
+            <div class="pages phonics" data-value="page5" data-phonics="page4">
+                <div class="resetButton Bquiz"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="imageTitle"><img src='./media/food/food_white/Salad.png' width='450px'></div>
                 <div class="alphaBox">
                     <img class="alpha" data-answer="true" src='./media/phonicCards/normal/s.png' width='220px'>
                     <img class="alpha" data-answer="false" src='./media/phonicCards/normal/f.png' width='220px'>
                     <img class="alpha" data-answer="false" src='./media/phonicCards/normal/c.png' width='220px'>
                 </div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">4</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">4</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
             </div>
-            <div class="pages" data-value="page6">
+            <div class="pages phonics" data-value="page6" data-phonics="page5">
+                <div class="resetButton Bquiz"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="imageTitle"><img src='./media/food/food_white/Rice.png' width='450px'></div>
                 <div class="alphaBox">
                     <img class="alpha" data-answer="false" src='./media/phonicCards/normal/b.png' width='220px'>
                     <img class="alpha" data-answer="false" src='./media/phonicCards/normal/f.png' width='220px'>
                     <img class="alpha" data-answer="true" src='./media/phonicCards/normal/r.png' width='220px'>
                 </div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">5</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">5</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
             </div>
-            <div class="pages" data-value="page7">
+            <div class="pages phonics" data-value="page7" data-phonics="page6">
+                <div class="resetButton Bquiz"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="imageTitle"><img src='./media/food/food_white/Water.png' width='450px'></div>
                 <div class="alphaBox">
                     <img class="alpha" data-answer="true" src='./media/phonicCards/normal/w.png' width='220px'>
                     <img class="alpha" data-answer="false" src='./media/phonicCards/normal/f.png' width='220px'>
                     <img class="alpha" data-answer="false" src='./media/phonicCards/normal/a.png' width='220px'>
                 </div>
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">6</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">6</span>&nbsp;/&nbsp;<span class="backNumber">6</span></div>
+                </div>
             </div>
-            <div class="pages" data-value="page8">
+            <div class="pages phonics" data-value="page8" data-phonics="page7">
+                <div class="resetButton Bcard"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="imageTitle cardDrop">
                     <img alpha-value="m" src='./media/phonicsDrag/phonic_drag_card/normal/milk.png' width='176px'>
                     <img alpha-value="b" src='./media/phonicsDrag/phonic_drag_card/normal/burger.png' width='176px'>
@@ -431,12 +563,9 @@
                     <img alpha-value="m" src="./media/phonicsDrag/phonic_drag_letters/normal/m.png" width="176px">
                 </div>
             </div>
-        </div>
-        <div id="chapter5">
-            <div class="pages" data-value="page1" id="bwSelection">
-                <div class="pageTitle"><p>Let's Build Words!</p></div>
-            </div>
-            <div class="pages" data-value="page2">
+            <!-- build words -->
+            <!-- <div class="pages bwL bwM" data-value="page9" data-bwL="page1" data-bwM="page1">
+                <div class="resetButton Bbw"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="buildWordsTitle">
                     <div class="bwBox">
                         <div class="bwCorrect"><img src="./media/buildWords/checkmark.png" width="100px"></div>
@@ -468,7 +597,8 @@
                     </div>
                 </div>
             </div>
-            <div class="pages" data-value="page3">
+            <div class="pages bwL bwM" data-value="page10" data-bwL="page2" data-bwM="page2">
+                <div class="resetButton Bbw"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="buildWordsTitle">
                     <div class="bwBox">
                         <div class="bwCorrect"><img src="./media/buildWords/checkmark.png" width="100px"></div>
@@ -478,10 +608,10 @@
                             <div class="dropBox" alpha-value="t"><img class="dropBackground" src="./media/buildWords/let_us_build_words_bat/slot/orangebox.png" width="176px"></div>
                         </div>
                         <div class="bwDown dragBox">
-                            <img alpha-value="e" src="./media/buildWords/let_us_build_words_bat/normal/e.png" width="176px">
-                            <img alpha-value="t" src="./media/buildWords/let_us_build_words_bat/normal/t.png" width="176px">
                             <img alpha-value="a" src="./media/buildWords/let_us_build_words_bat/normal/a.png" width="176px">
-                            <img alpha-value="p" src="./media/buildWords/let_us_build_words_bat/normal/p.png" width="176px">
+                            <img alpha-value="s" src="./media/buildWords/let_us_build_words_bat/normal/s.png" width="176px">
+                            <img alpha-value="o" src="./media/buildWords/let_us_build_words_bat/normal/o.png" width="176px">
+                            <img alpha-value="t" src="./media/buildWords/let_us_build_words_bat/normal/t.png" width="176px">
                         </div>
                     </div>
                     <div class="bwBox">
@@ -500,7 +630,8 @@
                     </div>
                 </div>
             </div>
-            <div class="pages" data-value="page4">
+            <div class="pages bwL bwM" data-value="page11" data-bwL="page3" data-bwM="page3">
+                <div class="resetButton Bbw"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="buildWordsTitle">
                     <div class="bwBox">
                         <div class="bwCorrect"><img src="./media/buildWords/checkmark.png" width="100px"></div>
@@ -511,236 +642,139 @@
                         </div>
                         <div class="bwDown dragBox">
                             <img alpha-value="a" src="./media/buildWords/let_us_build_words_sat/normal/a.png" width="176px">
-                            <img alpha-value="t" src="./media/buildWords/let_us_build_words_sat/normal/t.png" width="176px">
+                            <img alpha-value="r" src="./media/buildWords/let_us_build_words_sat/normal/r.png" width="176px">
                             <img alpha-value="u" src="./media/buildWords/let_us_build_words_sat/normal/u.png" width="176px">
-                            <img alpha-value="d" src="./media/buildWords/let_us_build_words_sat/normal/d.png" width="176px">
-                        </div>
-                    </div>
-                    <div class="bwBox">
-                        <div class="bwCorrect"><img src="./media/buildWords/checkmark.png" width="100px"></div>
-                        <div class="bwUp">
-                            <img src="./media/buildWords/let_us_build_words_sun/answer/s.png" width="176px">
-                            <div class="dropBox" alpha-value="u"><img class="dropBackground" src="./media/buildWords/let_us_build_words_sun/slot/bluebox.png" width="176px"></div>
-                            <div class="dropBox" alpha-value="n"><img class="dropBackground" src="./media/buildWords/let_us_build_words_sun/slot/orangebox.png" width="176px"></div>
-                        </div>
-                        <div class="bwDown dragBox">
-                            <img alpha-value="a" src="./media/buildWords/let_us_build_words_sun/normal/a.png" width="176px">
-                            <img alpha-value="n" src="./media/buildWords/let_us_build_words_sun/normal/n.png" width="176px">
-                            <img alpha-value="u" src="./media/buildWords/let_us_build_words_sun/normal/u.png" width="176px">
-                            <img alpha-value="m" src="./media/buildWords/let_us_build_words_sun/normal/m.png" width="176px">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pages" data-value="page5">
-                <div class="buildWordsTitle">
-                    <div class="bwBox">
-                        <div class="bwCorrect"><img src="./media/buildWords/checkmark.png" width="100px"></div>
-                        <div class="bwUp">
-                            <img src="./media/buildWords/let_us_build_words_pat/answer/p.png" width="176px">
-                            <div class="dropBox" alpha-value="a"><img class="dropBackground" src="./media/buildWords/let_us_build_words_pat/slot/bluebox.png" width="176px"></div>
-                            <div class="dropBox" alpha-value="t"><img class="dropBackground" src="./media/buildWords/let_us_build_words_pat/slot/orangebox.png" width="176px"></div>
-                        </div>
-                        <div class="bwDown dragBox">
-                            <img alpha-value="e" src="./media/buildWords/let_us_build_words_pat/normal/e.png" width="176px">
-                            <img alpha-value="p" src="./media/buildWords/let_us_build_words_pat/normal/p.png" width="176px">
-                            <img alpha-value="a" src="./media/buildWords/let_us_build_words_pat/normal/a.png" width="176px">
-                            <img alpha-value="t" src="./media/buildWords/let_us_build_words_pat/normal/t.png" width="176px">
-                        </div>
-                    </div>
-                    <div class="bwBox">
-                        <div class="bwCorrect"><img src="./media/buildWords/checkmark.png" width="100px"></div>
-                        <div class="bwUp">
-                            <img src="./media/buildWords/let_us_build_words_pot/answer/p.png" width="176px">
-                            <div class="dropBox" alpha-value="o"><img class="dropBackground" src="./media/buildWords/let_us_build_words_pot/slot/bluebox.png" width="176px"></div>
-                            <div class="dropBox" alpha-value="t"><img class="dropBackground" src="./media/buildWords/let_us_build_words_pot/slot/orangebox.png" width="176px"></div>
-                        </div>
-                        <div class="bwDown dragBox">
-                            <img alpha-value="a" src="./media/buildWords/let_us_build_words_pot/normal/a.png" width="176px">
-                            <img alpha-value="t" src="./media/buildWords/let_us_build_words_pot/normal/t.png" width="176px">
-                            <img alpha-value="o" src="./media/buildWords/let_us_build_words_pot/normal/o.png" width="176px">
-                            <img alpha-value="d" src="./media/buildWords/let_us_build_words_pot/normal/d.png" width="176px">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- M -->
-            <div class="pages bwM" data-value="page10" data-bwM="page1">
-                <div class="buildWordsTitle">
-                    <div class="bwBox">
-                        <div class="bwCorrect"><img src="./media/buildWords/checkmark.png" width="100px"></div>
-                        <div class="bwUp">
-                            <img src="./media/buildWords/let_us_build_words_map/answer/m.png" width="176px">
-                            <div class="dropBox" alpha-value="a"><img class="dropBackground" src="./media/buildWords/let_us_build_words_map/slot/bluebox.png" width="176px"></div>
-                            <div class="dropBox" alpha-value="p"><img class="dropBackground" src="./media/buildWords/let_us_build_words_map/slot/orangebox.png" width="176px"></div>
-                        </div>
-                        <div class="bwDown dragBox">
-                            <img alpha-value="a" src="./media/buildWords/let_us_build_words_map/normal/a.png" width="176px">
-                            <img alpha-value="p" src="./media/buildWords/let_us_build_words_map/normal/p.png" width="176px">
-                            <img alpha-value="u" src="./media/buildWords/let_us_build_words_map/normal/u.png" width="176px">
-                            <img alpha-value="k" src="./media/buildWords/let_us_build_words_map/normal/k.png" width="176px">
-                        </div>
-                    </div>
-                    <div class="bwBox">
-                        <div class="bwCorrect"><img src="./media/buildWords/checkmark.png" width="100px"></div>
-                        <div class="bwUp">
-                            <img src="./media/buildWords/let_us_build_words_mat/answer/m.png" width="176px">
-                            <div class="dropBox" alpha-value="a"><img class="dropBackground" src="./media/buildWords/let_us_build_words_mat/slot/bluebox.png" width="176px"></div>
-                            <div class="dropBox" alpha-value="t"><img class="dropBackground" src="./media/buildWords/let_us_build_words_mat/slot/orangebox.png" width="176px"></div>
-                        </div>
-                        <div class="bwDown dragBox">
-                            <img alpha-value="a" src="./media/buildWords/let_us_build_words_mat/normal/a.png" width="176px">
-                            <img alpha-value="d" src="./media/buildWords/let_us_build_words_mat/normal/d.png" width="176px">
-                            <img alpha-value="e" src="./media/buildWords/let_us_build_words_mat/normal/e.png" width="176px">
-                            <img alpha-value="t" src="./media/buildWords/let_us_build_words_mat/normal/t.png" width="176px">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pages bwM" data-value="page11" data-bwM="page2">
-                <div class="buildWordsTitle">
-                    <div class="bwBox">
-                        <div class="bwCorrect"><img src="./media/buildWords/checkmark.png" width="100px"></div>
-                        <div class="bwUp">
-                            <img src="./media/buildWords/let_us_build_words_bat/answer/b.png" width="176px">
-                            <div class="dropBox" alpha-value="a"><img class="dropBackground" src="./media/buildWords/let_us_build_words_bat/slot/bluebox.png" width="176px"></div>
-                            <div class="dropBox" alpha-value="t"><img class="dropBackground" src="./media/buildWords/let_us_build_words_bat/slot/orangebox.png" width="176px"></div>
-                        </div>
-                        <div class="bwDown dragBox">
-                            <img alpha-value="e" src="./media/buildWords/let_us_build_words_bat/normal/e.png" width="176px">
-                            <img alpha-value="t" src="./media/buildWords/let_us_build_words_bat/normal/t.png" width="176px">
-                            <img alpha-value="a" src="./media/buildWords/let_us_build_words_bat/normal/a.png" width="176px">
-                            <img alpha-value="p" src="./media/buildWords/let_us_build_words_bat/normal/p.png" width="176px">
-                        </div>
-                    </div>
-                    <div class="bwBox">
-                        <div class="bwCorrect"><img src="./media/buildWords/checkmark.png" width="100px"></div>
-                        <div class="bwUp">
-                            <img src="./media/buildWords/let_us_build_words_bop/answer/b.png" width="176px">
-                            <div class="dropBox" alpha-value="o"><img class="dropBackground" src="./media/buildWords/let_us_build_words_bop/slot/bluebox.png" width="176px"></div>
-                            <div class="dropBox" alpha-value="p"><img class="dropBackground" src="./media/buildWords/let_us_build_words_bop/slot/orangebox.png" width="176px"></div>
-                        </div>
-                        <div class="bwDown dragBox">
-                            <img alpha-value="u" src="./media/buildWords/let_us_build_words_bop/normal/u.png" width="176px">
-                            <img alpha-value="p" src="./media/buildWords/let_us_build_words_bop/normal/p.png" width="176px">
-                            <img alpha-value="o" src="./media/buildWords/let_us_build_words_bop/normal/o.png" width="176px">
-                            <img alpha-value="f" src="./media/buildWords/let_us_build_words_bop/normal/f.png" width="176px">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pages bwM" data-value="page12" data-bwM="page3">
-                <div class="buildWordsTitle">
-                    <div class="bwBox">
-                        <div class="bwCorrect"><img src="./media/buildWords/checkmark.png" width="100px"></div>
-                        <div class="bwUp">
-                            <img src="./media/buildWords/let_us_build_words_sat/answer/s.png" width="176px">
-                            <div class="dropBox" alpha-value="a"><img class="dropBackground" src="./media/buildWords/let_us_build_words_sat/slot/bluebox.png" width="176px"></div>
-                            <div class="dropBox" alpha-value="t"><img class="dropBackground" src="./media/buildWords/let_us_build_words_sat/slot/orangebox.png" width="176px"></div>
-                        </div>
-                        <div class="bwDown dragBox">
-                            <img alpha-value="a" src="./media/buildWords/let_us_build_words_sat/normal/a.png" width="176px">
                             <img alpha-value="t" src="./media/buildWords/let_us_build_words_sat/normal/t.png" width="176px">
-                            <img alpha-value="u" src="./media/buildWords/let_us_build_words_sat/normal/u.png" width="176px">
-                            <img alpha-value="d" src="./media/buildWords/let_us_build_words_sat/normal/d.png" width="176px">
                         </div>
                     </div>
                     <div class="bwBox">
                         <div class="bwCorrect"><img src="./media/buildWords/checkmark.png" width="100px"></div>
                         <div class="bwUp">
-                            <img src="./media/buildWords/let_us_build_words_sun/answer/s.png" width="176px">
-                            <div class="dropBox" alpha-value="u"><img class="dropBackground" src="./media/buildWords/let_us_build_words_sun/slot/bluebox.png" width="176px"></div>
-                            <div class="dropBox" alpha-value="n"><img class="dropBackground" src="./media/buildWords/let_us_build_words_sun/slot/orangebox.png" width="176px"></div>
+                            <img src="./media/buildWords/let_us_build_words_sum/answer/s.png" width="176px">
+                            <div class="dropBox" alpha-value="u"><img class="dropBackground" src="./media/buildWords/let_us_build_words_sum/slot/bluebox.png" width="176px"></div>
+                            <div class="dropBox" alpha-value="m"><img class="dropBackground" src="./media/buildWords/let_us_build_words_sum/slot/orangebox.png" width="176px"></div>
                         </div>
                         <div class="bwDown dragBox">
-                            <img alpha-value="a" src="./media/buildWords/let_us_build_words_sun/normal/a.png" width="176px">
-                            <img alpha-value="n" src="./media/buildWords/let_us_build_words_sun/normal/n.png" width="176px">
-                            <img alpha-value="u" src="./media/buildWords/let_us_build_words_sun/normal/u.png" width="176px">
-                            <img alpha-value="m" src="./media/buildWords/let_us_build_words_sun/normal/m.png" width="176px">
+                            <img alpha-value="e" src="./media/buildWords/let_us_build_words_sum/normal/e.png" width="176px">
+                            <img alpha-value="d" src="./media/buildWords/let_us_build_words_sum/normal/d.png" width="176px">
+                            <img alpha-value="u" src="./media/buildWords/let_us_build_words_sum/normal/u.png" width="176px">
+                            <img alpha-value="m" src="./media/buildWords/let_us_build_words_sum/normal/m.png" width="176px">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="pages bwM" data-value="page13" data-bwM="page4">
+            <div class="pages bwL bwM" data-value="page12" data-bwL="page4" data-bwM="page4">
+                <div class="resetButton Bbw"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="buildWordsTitle">
                     <div class="bwBox">
                         <div class="bwCorrect"><img src="./media/buildWords/checkmark.png" width="100px"></div>
                         <div class="bwUp">
-                            <img src="./media/buildWords/let_us_build_words_pat/answer/p.png" width="176px">
-                            <div class="dropBox" alpha-value="a"><img class="dropBackground" src="./media/buildWords/let_us_build_words_pat/slot/bluebox.png" width="176px"></div>
-                            <div class="dropBox" alpha-value="t"><img class="dropBackground" src="./media/buildWords/let_us_build_words_pat/slot/orangebox.png" width="176px"></div>
+                            <img src="./media/buildWords/let_us_build_words_lap/answer/l.png" width="176px">
+                            <div class="dropBox" alpha-value="a"><img class="dropBackground" src="./media/buildWords/let_us_build_words_lap/slot/bluebox.png" width="176px"></div>
+                            <div class="dropBox" alpha-value="p"><img class="dropBackground" src="./media/buildWords/let_us_build_words_lap/slot/orangebox.png" width="176px"></div>
                         </div>
                         <div class="bwDown dragBox">
-                            <img alpha-value="e" src="./media/buildWords/let_us_build_words_pat/normal/e.png" width="176px">
-                            <img alpha-value="p" src="./media/buildWords/let_us_build_words_pat/normal/p.png" width="176px">
-                            <img alpha-value="a" src="./media/buildWords/let_us_build_words_pat/normal/a.png" width="176px">
-                            <img alpha-value="t" src="./media/buildWords/let_us_build_words_pat/normal/t.png" width="176px">
+                            <img alpha-value="a" src="./media/buildWords/let_us_build_words_lap/normal/a.png" width="176px">
+                            <img alpha-value="p" src="./media/buildWords/let_us_build_words_lap/normal/p.png" width="176px">
+                            <img alpha-value="o" src="./media/buildWords/let_us_build_words_lap/normal/o.png" width="176px">
+                            <img alpha-value="s" src="./media/buildWords/let_us_build_words_lap/normal/s.png" width="176px">
                         </div>
                     </div>
                     <div class="bwBox">
                         <div class="bwCorrect"><img src="./media/buildWords/checkmark.png" width="100px"></div>
                         <div class="bwUp">
-                            <img src="./media/buildWords/let_us_build_words_pot/answer/p.png" width="176px">
-                            <div class="dropBox" alpha-value="o"><img class="dropBackground" src="./media/buildWords/let_us_build_words_pot/slot/bluebox.png" width="176px"></div>
-                            <div class="dropBox" alpha-value="t"><img class="dropBackground" src="./media/buildWords/let_us_build_words_pot/slot/orangebox.png" width="176px"></div>
+                            <img src="./media/buildWords/let_us_build_words_leg/answer/l.png" width="176px">
+                            <div class="dropBox" alpha-value="e"><img class="dropBackground" src="./media/buildWords/let_us_build_words_leg/slot/bluebox.png" width="176px"></div>
+                            <div class="dropBox" alpha-value="g"><img class="dropBackground" src="./media/buildWords/let_us_build_words_leg/slot/orangebox.png" width="176px"></div>
                         </div>
                         <div class="bwDown dragBox">
-                            <img alpha-value="a" src="./media/buildWords/let_us_build_words_pot/normal/a.png" width="176px">
-                            <img alpha-value="t" src="./media/buildWords/let_us_build_words_pot/normal/t.png" width="176px">
-                            <img alpha-value="o" src="./media/buildWords/let_us_build_words_pot/normal/o.png" width="176px">
-                            <img alpha-value="d" src="./media/buildWords/let_us_build_words_pot/normal/d.png" width="176px">
+                            <img alpha-value="e" src="./media/buildWords/let_us_build_words_leg/normal/e.png" width="176px">
+                            <img alpha-value="r" src="./media/buildWords/let_us_build_words_leg/normal/r.png" width="176px">
+                            <img alpha-value="i" src="./media/buildWords/let_us_build_words_leg/normal/i.png" width="176px">
+                            <img alpha-value="t" src="./media/buildWords/let_us_build_words_leg/normal/t.png" width="176px">
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-
-            <div class="pages bwM" data-value="page6" data-bwM="page5">
-                <div class="foodNumber"><span class="frontNumber">1</span>&nbsp;/&nbsp;<span class="backNumber">1</span></div>
+            <div class="pages bwM" data-value="page9" data-bwM="page1">
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">1</span>&nbsp;/&nbsp;<span class="backNumber">1</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">1</span>&nbsp;/&nbsp;<span class="backNumber">1</span></div>
+                </div>
                 <div class="imageTitle"><img src='./media/buildWords/build_words_low.png' width='1024px'></div>
             </div>
-            <div class="pages bwH" data-value="page7" data-bwH="page1">
+            <div class="pages bwH" data-value="page10" data-bwH="page1">
                 <div class="imageTitle"><img src='./media/buildWords/handout.png' width='1200px'></div>
             </div>
-            <div class="pages bwH" data-value="page8" data-bwH="page2">
-                <div class="foodNumber"><span class="frontNumber">1</span>&nbsp;/&nbsp;<span class="backNumber">2</span></div>
+            <div class="pages bwH" data-value="page11" data-bwH="page2">
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">1</span>&nbsp;/&nbsp;<span class="backNumber">2</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">1</span>&nbsp;/&nbsp;<span class="backNumber">2</span></div>
+                </div>
                 <div class="imageTitle"><img src='./media/buildWords/build_words_high1.png' width='1024px'></div>
             </div>
-            <div class="pages bwH" data-value="page9" data-bwH="page3">
-                <div class="foodNumber"><span class="frontNumber">2</span>&nbsp;/&nbsp;<span class="backNumber">2</span></div>
+            <div class="pages bwH" data-value="page12" data-bwH="page3">
+                <div class="leftButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">2</span>&nbsp;/&nbsp;<span class="backNumber">2</span></div>
+                </div>
+                <div class="rightButtonMenu">
+                    <div class="foodNumber"><span class="frontNumber">2</span>&nbsp;/&nbsp;<span class="backNumber">2</span></div>
+                </div>
                 <div class="imageTitle"><img src='./media/buildWords/build_words_high2.png' width='1024px'></div>
             </div>
+
+            <div class="pages bwL bwM bwH" data-value="page13" data-bwL="page1" data-bwM="page2" data-bwH="page4">
+                <div class="imageTitle">
+                    <img src='./media/Background/songbg.png' width='1920px'>
+                </div>
+                <div class="imageTitle">
+                    <audio controls src="./media/sound/song.mp3">Your browser does not support the <code>audio</code> element.</audio>
+                </div>
+            </div>
         </div>
-        <div id="chapter6">
+        <div id="chapter5">
             <div class="pages" data-value="page1" id="quizSelection">
                 <div class="pageTitle"><p>Quiz</p></div>
+                <div class="pageTitle" style="margin-top: 50px">
+                    <button class="wheelButtonLow wheelButton"><img src="./media/buttons/lowbutton.png" height="70px"></button>
+                    <button class="wheelButtonMid wheelButton"><img src="./media/buttons/midbutton.png" height="70px"></button>
+                    <button class="wheelButtonHigh wheelButton"><img src="./media/buttons/highbutton.png" height="70px"></button>
+                </div>
             </div>
-            <div class="pages" data-value="page2">
+            <div class="pages qL" data-value="page2" data-qL="page1">
                 <div class="quizText"><p>What is it?</p></div>
                 <div class="quizImage"><img src='./media/food/food_white/Burger.png' width='500px'></div>
             </div>
-            <div class="pages" data-value="page3">
+            <div class="pages qL" data-value="page3" data-qL="page2">
                 <div class="quizText"><p>What do you like?</p></div>
                 <div class="specialImage"><img src='./media/quiz/quiz_low/what_do_you_like/what-do-you-like.png' width='500px'></div>
             </div>
-            <div class="pages" data-value="page4">
+            <div class="pages qL" data-value="page4" data-qL="page3">
                 <div class="quizText"><p>Where is '<span style="color:#832376">w/w/water</span>'?</p></div>
+                <div class="resetButton Bquiz"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="quizImage">
                     <img class="alpha" data-answer="false" src='./media/quiz/quiz_low/where_is_water/normal/fries.png' width='263px'>
                     <img class="alpha" data-answer="true" src='./media/quiz/quiz_low/where_is_water/normal/water.png' width='263px'>
                     <img class="alpha" data-answer="false" src='./media/quiz/quiz_low/where_is_water/normal/curry.png' width='263px'>
                 </div>
             </div>
-            <div class="pages" data-value="page5">
+            <div class="pages qL" data-value="page5" data-qL="page4">
                 <div class="quizText"><p>It's a pizza.</p></div>
                 <div class="quizImage"><img src='./media/food/food_white/Pizza.png' width='350px'></div>
+                <div class="resetButton Bquiz"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="quizImage">
                     <img class="alpha" data-answer="true" src='./media/quiz/quiz_low/it_is_a_pizza/normal/yes.png' width='263px'>
                     <img class="alpha" data-answer="false" src='./media/quiz/quiz_low/it_is_a_pizza/normal/no.png' width='263px'>
                 </div>
             </div>
-            <div class="pages" data-value="page6">
+            <div class="pages qL" data-value="page6" data-qL="page5">
                 <div class="quizText"><p>I don't like rice!</p></div>
+                <div class="resetButton Bquiz"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="quizImage">
                     <img class="alpha" data-answer="false" src='./media/quiz/quiz_low/i_dont_like_rice/normal/pizza.png' width='263px'>
                     <img class="alpha" data-answer="true" src='./media/quiz/quiz_low/i_dont_like_rice/normal/rice.png' width='263px'>
@@ -748,9 +782,10 @@
                     <img class="alpha" data-answer="false" src='./media/quiz/quiz_low/i_dont_like_rice/normal/milkshake.png' width='263px'>
                 </div>
             </div>
-            <div class="pages" data-value="page7">
+            <div class="pages qL" data-value="page7" data-qL="page6">
                 <div class="quizText"><p>What sound does it make?</p></div>
                 <div class="quizImage"><img src='./media/food/food_white/Fries.png' width='350px'></div>
+                <div class="resetButton Bquiz"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="quizImage">
                     <img class="alpha" data-answer="false" src='./media/quiz/quiz_low/what_sound_does_it_make/normal/t.png' width='263px'>
                     <img class="alpha" data-answer="false" src='./media/quiz/quiz_low/what_sound_does_it_make/normal/p.png' width='263px'>
@@ -758,15 +793,17 @@
                     <img class="alpha" data-answer="false" src='./media/quiz/quiz_low/what_sound_does_it_make/normal/r.png' width='263px'>
                 </div>
             </div>
-            <div class="pages" data-value="page8">
+            <div class="pages qL" data-value="page8" data-qL="page7">
                 <!-- <div class="penIcon"><button class="pen"><img src="./media/buttons/pen.png" width="70px"></button></div>
                 <div class="penIcon"><button class="pen"><img src="./media/buttons/pen.png" width="70px"></button></div> -->
-                <div class="quizText"><p>Write the word.</p></div>
-                <div class="quizText" style="margin-top:20px"><hr style="border:1px dashed" width="186px"><hr style="border:1px dashed" width="186px"><hr style="border:1px dashed" width="186px"></div>
+                <div class="quizText"><p>Write the missing letter.</p></div>
+                <!-- <div class="quizText" style="margin-top:20px"><hr style="border:1px dashed" width="186px"><hr style="border:1px dashed" width="186px"><hr style="border:1px dashed" width="186px"></div> -->
+                <div class="quizText" style="margin-top:20px"><p>__urger</p></div>
                 <div class="quizImage"><img src='' width='700px'></div>
             </div>
             <div class="pages qM" data-value="page9" data-qM="page1">
-                <div class="quizText"><p>It tastes spicy.</p></div>
+                <div class="quizText"><p>The curry is too spicy.</p></div>
+                <div class="resetButton Bquiz"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="quizImage">
                     <img class="alpha" data-answer="false" src='./media/quiz/quiz_mid/it_tastes_spicy/normal/fries.png' width='263px'>
                     <img class="alpha" data-answer="false" src='./media/quiz/quiz_mid/it_tastes_spicy/normal/burger.png' width='263px'>
@@ -774,7 +811,7 @@
                 </div>
             </div>
             <div class="pages qM" data-value="page10" data-qM="page2">
-                <div class="quizText"><p>What does it say?</p></div>
+                <div class="quizText"><p>Read the sentence.</p></div>
                 <div class="quizText" style="margin-top:60px"><p style="color:#832376;">It's a milkshake.</p></div>
             </div>
             <div class="pages qM" data-value="page11" data-qM="page3">
@@ -792,6 +829,7 @@
             </div>
             <div class="pages qM" data-value="page13" data-qM="page5">
                 <div class="quizText"><p>I like curry!</p></div>
+                <div class="resetButton Bquiz"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="quizImage">
                     <img class="alpha" data-answer="false" src='./media/quiz/quiz_mid/i_like_curry/normal/salad.png' width='263px'>
                     <img class="alpha" data-answer="false" src='./media/quiz/quiz_mid/i_like_curry/normal/water.png' width='263px'>
@@ -800,6 +838,7 @@
                 </div>
             </div>
             <div class="pages qM" data-value="page14" data-qM="page6">
+                <div class="resetButton Bqc"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="quizText"><p>What letter is missing?</p></div>
                 <div class="quizImage"><img src='./media/food/food_white/Fries.png' width='350px'></div>
                 <div class="quizImage">
@@ -815,10 +854,12 @@
                     <img alpha-value="s" src="./media/quiz/quiz_mid/what_letter_is_missing/normal/s.png" width="98px">
                     <img alpha-value="u" src="./media/quiz/quiz_mid/what_letter_is_missing/normal/u.png" width="98px">
                 </div>
+                <div class="quizCorrect"><img src="./media/buildWords/checkmark.png" width="100px"></div>
             </div>
             <div class="pages qM" data-value="page15" data-qM="page7">
                 <div class="quizText"><p>It's a <span>_________</span></p></div>
                 <div class="quizImage"><img src='./media/food/food_white/Pizza.png' width='350px'></div>
+                <div class="resetButton Bquiz"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="quizImage">
                     <img class="alpha" data-answer="false" src='./media/quiz/quiz_mid/it_is_a_pizza/normal/zaap.png' width='263px'>
                     <img class="alpha" data-answer="true" src='./media/quiz/quiz_mid/it_is_a_pizza/normal/zipza.png' width='263px'>
@@ -848,6 +889,7 @@
                 <div class="quizImage"><img src='./media/food/food_white/Fries.png' width='500px'></div>
             </div>
             <div class="pages qH" data-value="page20" data-qH="page5">
+                <div class="resetButton Bqc"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="quizText"><p>What letters are missing?</p></div>
                 <div class="quizImage"><img src='./media/food/food_white/Milkshake.png' width='450px'></div>
                 <div class="quizImage">
@@ -866,10 +908,12 @@
                     <img alpha-value="sh" src="./media/quiz/quiz_high/what_latters_are_missing/normal/sh.png" width="131px">
                     <img alpha-value="th" src="./media/quiz/quiz_high/what_latters_are_missing/normal/th.png" width="131px">
                 </div>
+                <div class="quizCorrect"><img src="./media/buildWords/checkmark.png" width="100px"></div>
             </div>
             <div class="pages qH" data-value="page21" data-qH="page6">
                 <div class="quizText"><p>Is it spicy?</p></div>
-                <div class="quizImage"><img src='./media/tasteImage/salty.png' width='424px'></div>
+                <div class="quizImage"><img src='./media/quiz/quiz_high/is_it_spicy/salty.png' width='424px'></div>
+                <div class="resetButton Bquiz"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="quizImage">
                     <img class="alpha" data-answer="false" src='./media/quiz/quiz_high/is_it_spicy/normal/yes.png' width='263px'>
                     <img class="alpha" data-answer="true" src='./media/quiz/quiz_high/is_it_spicy/normal/no.png' width='263px'>
@@ -878,6 +922,7 @@
             <div class="pages qH" data-value="page22" data-qH="page7">
                 <div class="quizText"><p>It's a <span>_________</span></p></div>
                 <div class="quizImage"><img src='./media/food/food_white/Salad.png' width='350px'></div>
+                <div class="resetButton Bquiz"><img src="./media/buttons/reset.png" width="45px"></div>
                 <div class="quizImage">
                     <img class="alpha" data-answer="true" src='./media/quiz/quiz_high/it_is_a_salad/normal/daals.png' width='263px'>
                     <img class="alpha" data-answer="false" src='./media/quiz/quiz_high/it_is_a_salad/normal/aassld.png' width='263px'>
@@ -886,16 +931,23 @@
                 </div>
             </div>
         </div>
-        <div id="chapter7">
-            <div class="pages" data-value="page1">
+        <div id="chapter6">
+            <div class="pages" data-value="page1" id="finaleSelection">
                 <div class="pageTitle"><p>Finale</p></div>
+                <div class="pageTitle" style="margin-top: 50px">
+                    <button class="wheelButtonLow wheelButton"><img src="./media/buttons/lowbutton.png" height="70px"></button>
+                    <button class="wheelButtonMid wheelButton"><img src="./media/buttons/midbutton.png" height="70px"></button>
+                    <button class="wheelButtonHigh wheelButton"><img src="./media/buttons/highbutton.png" height="70px"></button>
+                </div>
             </div>
-            <div class="pages" data-value="page2">
+            <div class="pages fL" data-value="page2" data-fL="page1">
                 <div class="finaleTitle"><img src='./media/final/final_low.png' width='1920px'></div>
-                <div class="foodImage"><img class="foodAnimate" src='./media/food/food_white/Chicken.png' width='350px'></div>
-                <div class="foodImage"><img class="foodAnimate" src='./media/food/food_white/Curry.png' width='350px'></div>
-                <div class="foodImage"><img class="foodAnimate" src='./media/food/food_white/Spaghetti.png' width='350px'></div>
-                <div class="foodImage"><img class="foodAnimate" src='./media/food/food_white/Coconut.png' width='350px'></div>
+                <div class="foodImage"><img class="foodAnimate" src='./media/food/food_white/Milkshake.png' width='275px'></div>
+                <div class="foodImage"><img class="foodAnimate" src='./media/food/food_white/Water.png' width='275px'></div>
+                <div class="foodImage"><img class="foodAnimate" src='./media/food/food_white/Burger.png' width='275px'></div>
+                <div class="foodImage"><img class="foodAnimate" src='./media/food/food_white/Rice.png' width='275px'></div>
+                <div class="foodImage"><img class="foodAnimate" src='./media/food/food_white/Salad.png' width='275px'></div>
+                <div class="foodImage"><img class="foodAnimate" src='./media/food/food_white/Pizza.png' width='275px'></div>
             </div>
             <div class="pages fM" data-value="page3" data-fM="page1">
                 <div class="finaleTitle"><img src='./media/final/final_mid.png' width='1920px'></div>
@@ -912,8 +964,10 @@
             <div class="pages fH" data-value="page4" data-fH="page1">
                 <div class="imageTitle"><img src='./media/final/final_high.png' width='1100px' style="margin-top:-300px"></div>
             </div>
-            <div class="pages" data-value="page5"></div>
-            <div class="pages" data-value="page6"></div>
+        </div>
+        <div id="chapter7">
+            <div class="pages" data-value="page1"></div>
+            <div class="pages" data-value="page2"></div>
         </div>
 
     </div>

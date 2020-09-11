@@ -1,0 +1,38 @@
+/*chaptter 4 and chapter 5*/
+#chapter4 > [data-value="page9"] > .imageTitle > img{
+	margin-top:-220px;
+}
+#chapter4 > [data-value="page10"] > .imageTitle > img{
+	margin-top: -260px;
+}
+#chapter4 > [data-value="page11"] > .imageTitle > img{
+	margin-top:-220px;
+}
+
+#chapter4 > [data-value="page12"] > .imageTitle > img{
+	margin-top:-220px;
+}
+
+#chapter4 > [data-value="page13"] > .imageTitle img{
+	margin-top:-540px;
+}
+
+#chapter4 > [data-value="page13"] > .imageTitle audio{
+	margin-top: 100px;
+}
+
+
+
+#chapter4 > [data-phonics="page7"] > .imageTitle:nth-child(2){
+	margin-top:-200px;
+}
+#chapter4 > [data-phonics="page7"] > .imageTitle:nth-child(3){
+	margin-top: -78px;
+}
+#chapter4 > [data-phonics="page7"] > .imageTitle:nth-child(4){
+	margin-top: 150px;
+}
+
+#chapter4 > [data-phonics="page7"] > .imageTitle img{
+	margin: 0 49px;
+}

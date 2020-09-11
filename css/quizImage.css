@@ -1,4 +1,4 @@
-#chapter6 > [data-value="page3"] > .specialImage{
+#chapter5 > [data-value="page3"] > .specialImage{
 	bottom:0%;
 	left:50%;
 	right:0;
@@ -8,123 +8,123 @@
 	text-align: center;
 }
 
-#chapter6 > [data-value="page4"] > .quizImage{
+#chapter5 > [data-value="page4"] > .quizImage{
 	margin-top:0px;
 }
 
-#chapter6 > [data-value="page5"] > .quizImage:nth-child(2){
+#chapter5 > [data-value="page5"] > .quizImage:nth-child(3){
 	margin-top:-180px;
 }
 
-#chapter6 > [data-value="page5"] > .quizImage:nth-child(3){
+#chapter5 > [data-value="page5"] > .quizImage:nth-child(4){
 	margin-top:150px;
 }
 
-#chapter6 > [data-value="page6"] > .quizImage{
+#chapter5 > [data-value="page6"] > .quizImage{
 	margin-top:0px;
 }
 
-#chapter6 > [data-value="page7"] > .quizImage:nth-child(2){
+#chapter5 > [data-value="page7"] > .quizImage:nth-child(3){
 	margin-top:-180px;
 }
 
-#chapter6 > [data-value="page7"] > .quizImage:nth-child(3){
+#chapter5 > [data-value="page7"] > .quizImage:nth-child(4){
 	margin-top:150px;
 }
 
-#chapter6 > [data-value="page8"] hr{
+#chapter5 > [data-value="page8"] hr{
 	display: inline-block;
 	margin:0 30px;
 }
 
-#chapter6 > [data-value="page9"] > .quizImage{
+#chapter5 > [data-value="page9"] > .quizImage{
 	margin-top:0px;
 }
 
-#chapter6 > [data-value="page11"] > .quizImage{
+#chapter5 > [data-value="page11"] > .quizImage{
 	margin-top:0px;
 }
 
-#chapter6 > [data-value="page11"] > .quizImage img{
+#chapter5 > [data-value="page11"] > .quizImage img{
 	margin: 0px 70px;
 }
 
-#chapter6 > [data-value="page13"] > .quizImage{
+#chapter5 > [data-value="page13"] > .quizImage{
 	margin-top:0px;
 }
 
-#chapter6 > [data-value="page14"] > .quizImage:nth-child(2){
-	margin-top: -230px;
+#chapter5 > [data-value="page14"] > .quizImage:nth-child(3){
+	margin-top: -210px;
 }
 
-#chapter6 > [data-value="page14"] > .quizImage:nth-child(3){
+#chapter5 > [data-value="page14"] > .quizImage:nth-child(4){
 	margin-top:50px;
 }
 
-#chapter6 > [data-value="page14"] > .quizImage:nth-child(3) img{
+#chapter5 > [data-value="page14"] > .quizImage:nth-child(4) img{
 	margin: 0 4px;
 }
 
-#chapter6 > [data-value="page14"] > .quizImage:nth-child(4){
+#chapter5 > [data-value="page14"] > .quizImage:nth-child(5){
 	margin-top: 250px;
 }
 
-#chapter6 > [data-value="page14"] > .quizImage:nth-child(4) > img{
+#chapter5 > [data-value="page14"] > .quizImage:nth-child(5) > img{
 	margin: 0 48px;
 }
 
-#chapter6 > [data-value="page15"] > .quizImage:nth-child(2){
+#chapter5 > [data-value="page15"] > .quizImage:nth-child(3){
 	margin-top:-180px;
 }
 
-#chapter6 > [data-value="page15"] > .quizImage:nth-child(3){
+#chapter5 > [data-value="page15"] > .quizImage:nth-child(4){
 	margin-top:150px;
 }
 
-#chapter6 > [data-value="page18"] > .quizImage{
+#chapter5 > [data-value="page18"] > .quizImage{
 	margin-top:0px;
 }
-#chapter6 > [data-value="page18"] > .quizImage img{
+#chapter5 > [data-value="page18"] > .quizImage img{
 	margin:0px 70px;
 }
 
-#chapter6 > [data-value="page19"] > .quizImage{
+#chapter5 > [data-value="page19"] > .quizImage{
 	margin-top:-180px;
 }
 
-#chapter6 > [data-value="page20"] > .quizImage:nth-child(2){
+#chapter5 > [data-value="page20"] > .quizImage:nth-child(3){
 	margin-top: -200px;
-	margin-left: -360px;
+	margin-left: -1560px;
 }
 
-#chapter6 > [data-value="page20"] > .quizImage:nth-child(3){
+#chapter5 > [data-value="page20"] > .quizImage:nth-child(4){
 	margin-top:-50px;
 }
 
-#chapter6 > [data-value="page20"] > .quizImage:nth-child(3) img{
+#chapter5 > [data-value="page20"] > .quizImage:nth-child(4) img{
 	margin: 0 4px;
 }
 
-#chapter6 > [data-value="page20"] > .quizImage:nth-child(4){
+#chapter5 > [data-value="page20"] > .quizImage:nth-child(5){
 	margin-top: 180px;
 }
 
-#chapter6 > [data-value="page20"] > .quizImage:nth-child(4) > img{
+#chapter5 > [data-value="page20"] > .quizImage:nth-child(5) > img{
 	margin:0 48px;
 }
 
-#chapter6 > [data-value="page21"] > .quizImage:nth-child(2){
-	margin-top:-120px
+#chapter5 > [data-value="page21"] > .quizImage:nth-child(2){
+	margin-top:-100px
 }
 
-#chapter6 > [data-value="page21"] > .quizImage:nth-child(3){
+#chapter5 > [data-value="page21"] > .quizImage:nth-child(4){
 	margin-top: 220px;
 }
 
-#chapter6 > [data-value="page22"] > .quizImage:nth-child(2){
+#chapter5 > [data-value="page22"] > .quizImage:nth-child(3){
 	margin-top:-180px;
 }
 
-#chapter6 > [data-value="page22"] > .quizImage:nth-child(3){
+#chapter5 > [data-value="page22"] > .quizImage:nth-child(4){
 	margin-top:150px;
 }
