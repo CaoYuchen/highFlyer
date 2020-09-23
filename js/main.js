@@ -213,16 +213,19 @@ $(function() {
 				{
 					newNumber = sL;
 					spinPiece = 6;
+					nowPiece = lPiece.slice();
 				}
 				else if(curButton.includes("wheelButtonMid"))
 				{
 					newNumber = sM;
 					spinPiece = 9;
+					nowPiece = mPiece.slice();
 				}
 				else if(curButton.includes("wheelButtonHigh"))
 				{
 					newNumber = sH;
 					spinPiece = 12;
+					nowPiece = hPiece.slice();
 				}
 				curChapter = structureChapter;
 			}
@@ -241,7 +244,7 @@ $(function() {
 					newNumber = bwH;
 				}
 				curChapter = buildwordsChapter;
-				console.log(phonics,bwL);
+				// console.log(phonics,bwL);
 			}
 			else if(curPage == "quizSelection")
 			{
@@ -516,6 +519,12 @@ $(function() {
 		var media = $("#hfVideo").get(0);
 		media.pause();
 		media.currentTime = 0;
+		var media = $("#hfVideo2").get(0);
+		media.pause();
+		media.currentTime = 0;
+		// var media = $("#pizzaSong").get(0);
+		// media.pause();
+		// media.currentTime = 0;
 	}
 
 	function upadateMHbutton(pageNumber, index, Hflag=false){
@@ -810,13 +819,20 @@ $(function() {
 
 	var startAngle = 0;
 	var spinPiece = 6;
-	var arc = Math.PI / (spinPiece / 2);
 	var spinTimeout = null;
 	var spinTime = 0;
 	var spinTimeTotal = 0;
+	var spinAngleStart = 0;
 	var canvas, image;
 	var previousPiece = 1;
-	
+	// var arc = Math.PI / (spinPiece / 2);
+
+	var lPiece = [1,2,3,4,5,6];
+	var mPiece = [1,2,3,4,5,6,7,8,9];
+	var hPiece = [1,2,3,4,5,6,7,8,9,10,11,12];
+	var nowPiece = lPiece;
+
+	var arc_last = 0;
 
 	for(i=0; i<$('.pinCanvas').length; i++)
 	{
@@ -837,47 +853,114 @@ $(function() {
 	    }
 	}
 
+	// function spin(canvas, image) {
+	//     do
+	//     {
+	//     	spinAngleStart = Math.random() * 10 + 10;
+	//     	spinTimeTotal = Math.random() * 3 + 5 * 1010; //5.05s duration
+
+	//     	for(spinTime=0;spinTime<spinTimeTotal;spinTime+=30)
+	//     	{
+	//     		spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
+	//     		startAngle += (spinAngle * Math.PI / 180);
+	//     		angle = startAngle + arc;
+	//     	}
+	//     	restPiece = (angle%(Math.PI * 2)) / (Math.PI * 2) * spinPiece;
+	//     	diff = Math.abs(previousPiece - restPiece - Math.PI/(spinPiece*2));
+
+	//     } while(diff <= 0.5);
+
+	//     spinTime = 0;
+	//     startAngle = 0;
+	//     previousPiece = Math.round(restPiece);
+
+	//     rotateWheel(canvas, image);
+	// }
+
+	// function rotateWheel(canvas, image) {
+	//     spinTime += 30;
+	//     if (spinTime >= spinTimeTotal) {
+	//         stopRotateWheel();
+	//         return;
+	//     }
+	//     var spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
+	//     startAngle += (spinAngle * Math.PI / 180);
+
+	// 	var ctx = canvas.getContext("2d");
+	//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+	//     ctx.save();
+	//     ctx.translate(canvas.width / 2, canvas.height / 2);
+
+	//     var angle = startAngle + arc;
+	//     ctx.rotate(angle);
+	//     ctx.drawImage(image, -canvas.width / 2, -canvas.width / 2);
+	//     ctx.restore();
+
+	//     spinTimeout = setTimeout(function()
+	//     	{
+	//     		rotateWheel(canvas,image);
+	//     	}, 30);
+	// }
+
 	function spin(canvas, image) {
-	    do
-	    {
-	    	spinAngleStart = Math.random() * 10 + 10;
-	    	spinTimeTotal = Math.random() * 3 + 5 * 1010; //5.05s duration
+		
+		$(".wheel").css("pointer-events", "none");
 
-	    	for(spinTime=0;spinTime<spinTimeTotal;spinTime+=30)
-	    	{
-	    		spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
-	    		startAngle += (spinAngle * Math.PI / 180);
-	    		angle = startAngle + arc;
-	    	}
-	    	restPiece = (angle%(Math.PI * 2)) / (Math.PI * 2) * spinPiece;
-	    	diff = Math.abs(previousPiece - restPiece - Math.PI/(spinPiece*2));
+		if(nowPiece.length <= 0)
+		{
+			if(spinPiece == 6)
+			{
+				nowPiece = lPiece.slice();
+			}
+			else if(spinPiece == 9)
+			{
+				nowPiece = mPiece.slice();
+			}
+			else if(spinPiece == 12)
+			{
+				nowPiece = hPiece.slice();
+			}
+		}
 
-	    } while(diff <= 0.5);
+		shuffleArray(nowPiece);
+		arc = 360 / spinPiece * 12;
+		arc_diff = nowPiece[0] * arc - arc_last;
+		if(arc_diff < 0)
+		{
+			arc_diff = arc_diff + 4320;
+		}
+
+		spinAngleStart = 10;
+    	// spinTimeTotal = 4380 + 240 * 12; //5.05s duration
+    	spinTimeTotal = 4380 + arc_diff;
 
 	    spinTime = 0;
-	    startAngle = 0;
-	    previousPiece = Math.round(restPiece);
 
 	    rotateWheel(canvas, image);
+
+	    arc_last = nowPiece[0] * arc;
+		nowPiece.splice(nowPiece.indexOf(nowPiece[0]), 1);
 	}
 
 	function rotateWheel(canvas, image) {
 	    spinTime += 30;
 	    if (spinTime >= spinTimeTotal) {
 	        stopRotateWheel();
+	        $(".wheel").css("pointer-events", "auto");
 	        return;
 	    }
+	    // console.log(spinTime)
 	    var spinAngle = spinAngleStart - easeOut(spinTime, 0, spinAngleStart, spinTimeTotal);
-	    startAngle += (spinAngle * Math.PI / 180);
+	    startAngle += (spinAngle * Math.PI / 180.0);
 
 		var ctx = canvas.getContext("2d");
 	    ctx.clearRect(0, 0, canvas.width, canvas.height);
 	    ctx.save();
 	    ctx.translate(canvas.width / 2, canvas.height / 2);
 
-	    var angle = startAngle + arc;
+	    var angle = startAngle;
 	    ctx.rotate(angle);
-	    ctx.drawImage(image, -canvas.width / 2, -canvas.width / 2);
+	    ctx.drawImage(image, -canvas.width / 2, -canvas.height / 2);
 	    ctx.restore();
 
 	    spinTimeout = setTimeout(function()
@@ -894,6 +977,15 @@ $(function() {
 	    var ts = (t /= d) * t;
 	    var tc = ts * t;
     return b + c * (tc + -3 * ts + 3 * t);
+	}
+
+	function shuffleArray(array) {
+	    for (var i = array.length - 1; i > 0; i--) {
+	        var j = Math.floor(Math.random() * (i + 1));
+	        var temp = array[i];
+	        array[i] = array[j];
+	        array[j] = temp;
+	    }
 	}
 
 })

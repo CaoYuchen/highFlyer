@@ -95,7 +95,7 @@ body {
 	margin-top:-100px;
 	position: fixed;
 	font-family: EducationVAGRounded-Bold;
-	color: #29b8ce;
+	color: #822375;
 	font-size: 100px;
 	font-weight: bold;
 	text-align: center;
@@ -274,8 +274,8 @@ body {
 	display: inline-block;
 	position: absolute;
 	z-index: 100;
-	right: 10px;
-	top: -720px;
+	right: 15px;
+	top: -565px;
 }
 
 .structureMid{
